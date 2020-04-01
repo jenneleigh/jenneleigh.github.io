@@ -1,0 +1,15 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Jenné Leigh -- Designer & Developer
+
+# THANKS
+
+    Vivek Tanna, Sally Peang and the rest of the United Designers crew 
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5
+    Apache Server Configs, jQuery, Modernizr, Normalize.css
