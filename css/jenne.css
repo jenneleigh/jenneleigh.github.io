@@ -316,4 +316,8 @@ a.case-study:hover picture, a.case-study:focus picture, a.case-study:active pict
 #case-study-bottom .row {
   margin: 0 auto 2rem;
 }
+
+.row#tldr-2 {
+  margin-top: 4rem;
+}
 /*# sourceMappingURL=jenne.css.map */
