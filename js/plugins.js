@@ -46,7 +46,7 @@
 {
 	var random = document.getElementById("random");
 
-	var phrase = ["creative-type person", "caffeine addict", "crazy cat lady"];
+	var phrase = ["creative-type person", "caffeine addict", "crazy cat lady", "esoteric ice cream hunter", "floof admirer", "sunset spotter", "Animal Crossing fixer"];
 
 	var randomPhrase = phrase[Math.floor(Math.random() * phrase.length)];
 
