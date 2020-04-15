@@ -1,17 +1,65 @@
+:root {
+  --fluid-min-width: 450;
+  --fluid-max-width: 1280;
+  --fluid-min-size: 14;
+  --fluid-max-size: 16;
+  --fluid-min-ratio: 1.333;
+  --fluid-max-ratio: 1.667;
+  --fluid-screen: 100vw;
+  --fluid-bp: calc((var(--fluid-screen) - ((var(--fluid-min-width) / 16) * 1rem)) / ((var(--fluid-max-width) / 16) - (var(--fluid-min-width) / 16)));
+}
+
+@media screen and (min-width: 1280px) {
+  :root {
+    --fluid-screen: calc(var(--fluid-max-width) * 1px);
+  }
+}
+
+:root {
+  --fluid-max-negative: (1 / var(--fluid-max-ratio) / var(--fluid-max-ratio));
+  --fluid-min-negative: (1 / var(--fluid-min-ratio) / var(--fluid-min-ratio));
+  --fluid-min-scale-0: var(--fluid-min-ratio);
+  --fluid-max-scale-0: var(--fluid-max-ratio);
+  --fluid-min-size-0: (var(--fluid-min-size)) / 16;
+  --fluid-max-size-0: (var(--fluid-max-size)) / 16;
+  --step-0: calc(((var(--fluid-min-size-0) * 1rem) + (var(--fluid-max-size-0) - var(--fluid-min-size-0)) * var(--fluid-bp)));
+  --fluid-min-scale-1: var(--fluid-min-scale-0) * var(--fluid-min-ratio);
+  --fluid-max-scale-1: var(--fluid-max-scale-0) * var(--fluid-max-ratio);
+  --fluid-min-size-1: (var(--fluid-min-size) * var(--fluid-min-scale-0)) / 16;
+  --fluid-max-size-1: (var(--fluid-max-size) * var(--fluid-max-scale-0)) / 16;
+  --step-1: calc(((var(--fluid-min-size-1) * 1rem) + (var(--fluid-max-size-1) - var(--fluid-min-size-1)) * var(--fluid-bp)));
+  --fluid-min-scale-2: var(--fluid-min-scale-1) * var(--fluid-min-ratio);
+  --fluid-max-scale-2: var(--fluid-max-scale-1) * var(--fluid-max-ratio);
+  --fluid-min-size-2: (var(--fluid-min-size) * var(--fluid-min-scale-1)) / 16;
+  --fluid-max-size-2: (var(--fluid-max-size) * var(--fluid-max-scale-1)) / 16;
+  --step-2: calc(((var(--fluid-min-size-2) * 1rem) + (var(--fluid-max-size-2) - var(--fluid-min-size-2)) * var(--fluid-bp)));
+  --fluid-min-scale-3: var(--fluid-min-scale-2) * var(--fluid-min-ratio);
+  --fluid-max-scale-3: var(--fluid-max-scale-2) * var(--fluid-max-ratio);
+  --fluid-min-size-3: (var(--fluid-min-size) * var(--fluid-min-scale-2)) / 16;
+  --fluid-max-size-3: (var(--fluid-max-size) * var(--fluid-max-scale-2)) / 16;
+  --step-3: calc(((var(--fluid-min-size-3) * 1rem) + (var(--fluid-max-size-3) - var(--fluid-min-size-3)) * var(--fluid-bp)));
+  --fluid-min-scale-4: var(--fluid-min-scale-3) * var(--fluid-min-ratio);
+  --fluid-max-scale-4: var(--fluid-max-scale-3) * var(--fluid-max-ratio);
+  --fluid-min-size-4: (var(--fluid-min-size) * var(--fluid-min-scale-3)) / 16;
+  --fluid-max-size-4: (var(--fluid-max-size) * var(--fluid-max-scale-3)) / 16;
+  --step-4: calc(((var(--fluid-min-size-4) * 1rem) + (var(--fluid-max-size-4) - var(--fluid-min-size-4)) * var(--fluid-bp)));
+}
+
 .font-base,
 p,
 ul,
-ol, .font-medium, nav.menu, #masthead h3, .social-icons, #case-study h3, body {
+ol, .font-medium, nav.menu, #masthead h3, .social-icons, #case-study h3, html,
+body {
   font-family: ff-tisa-sans-web-pro, sans-serif;
   font-weight: 300;
   color: #000;
 }
 
-.font-base strong, p strong, ul strong, ol strong, .font-medium strong, nav.menu strong, #masthead h3 strong, .social-icons strong, #case-study h3 strong, body strong {
+.font-base strong, p strong, ul strong, ol strong, .font-medium strong, nav.menu strong, #masthead h3 strong, .social-icons strong, #case-study h3 strong, html strong, body strong {
   font-weight: 500;
 }
 
-.font-large, a.case-study h3, #case-study h1, .font-xl, .font-xxl, #masthead h1 {
+.font-large, .font-xl, a.case-study h3, #case-study h1, .font-xxl, #masthead h1 {
   font-family: clarendon-urw, serif;
   font-weight: 700;
   color: #000;
@@ -21,25 +69,25 @@ ol, .font-medium, nav.menu, #masthead h3, .social-icons, #case-study h3, body {
 p,
 ul,
 ol {
-  font-size: 1rem;
+  font-size: var(--step-0);
   line-height: 1.5rem;
   margin: 0 0 1em;
 }
 
 .font-medium, nav.menu, #masthead h3, .social-icons, #case-study h3 {
-  font-size: 1.667rem;
+  font-size: var(--step-1);
   line-height: 1.5em;
   margin: 0 0 1.5em;
 }
 
-.font-large, a.case-study h3, #case-study h1 {
-  font-size: 4.632rem;
+.font-large {
+  font-size: var(--step-2);
   line-height: 1em;
   margin: 0;
 }
 
-.font-xl {
-  font-size: 4.632rem;
+.font-xl, a.case-study h3, #case-study h1 {
+  font-size: var(--step-3);
   line-height: 1em;
   margin: 0;
   text-transform: lowercase;
@@ -47,7 +95,7 @@ ol {
 
 .font-xxl, #masthead h1 {
   font-weight: 800;
-  font-size: 7.722em;
+  font-size: var(--step-4);
   line-height: 1em;
   margin: 0;
   text-transform: lowercase;
@@ -169,7 +217,7 @@ img {
 }
 
 a.case-study h3, #case-study h1 {
-  line-height: 3.5rem;
+  line-height: 0.75em;
   display: inline-block;
   text-transform: lowercase;
   border-bottom: 0.5rem solid #faa552;
@@ -178,9 +226,9 @@ a.case-study h3, #case-study h1 {
   z-index: 999;
 }
 
+html,
 body {
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: var(--step-0);
 }
 
 header {
@@ -205,16 +253,20 @@ header .menu li {
 }
 
 #masthead h1 {
+  line-height: 0.75em;
   display: inline-block;
   border-bottom: 0.5rem solid #faa552;
-  margin-bottom: 2rem;
-  margin: 0 0 2rem -4rem;
+  margin: 0 0 2rem 0;
   padding: 0 4rem;
 }
 
 #masthead h3 {
   display: inline-block;
   padding: 0 2rem;
+}
+
+#masthead .box {
+  padding-left: 2rem;
 }
 
 .social-icons {
@@ -238,21 +290,9 @@ a.case-study {
 }
 
 a.case-study picture {
-  opacity: 0.4;
   display: block;
   width: 100%;
   position: relative;
-}
-
-a.case-study h3 {
-  margin: -4.632rem auto 0 0;
-  position: absolute;
-  left: 1rem;
-  bottom: 0;
-}
-
-a.case-study:hover picture, a.case-study:focus picture, a.case-study:active picture {
-  opacity: 1;
 }
 
 #about {

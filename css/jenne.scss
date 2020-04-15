@@ -5,6 +5,59 @@ $orange: #faa552;
 $blue: #0a3d62;
 $blue-bg: #e6f4f4;
 
+:root {
+	--fluid-min-width: 450;
+	--fluid-max-width: 1280;
+	--fluid-min-size: 14;
+	--fluid-max-size: 16;
+	--fluid-min-ratio: 1.333;
+	--fluid-max-ratio: 1.667;
+
+	--fluid-screen: 100vw;
+	--fluid-bp: calc((var(--fluid-screen) - ((var(--fluid-min-width) / 16) * 1rem)) / ((var(--fluid-max-width) / 16) - (var(--fluid-min-width) / 16)));
+}
+
+@media screen and (min-width: 1280px) {
+	:root {
+		--fluid-screen: calc(var(--fluid-max-width) * 1px);
+	}
+}
+
+:root {
+	--fluid-max-negative: (1 / var(--fluid-max-ratio) / var(--fluid-max-ratio));
+	--fluid-min-negative: (1 / var(--fluid-min-ratio) / var(--fluid-min-ratio));
+
+	--fluid-min-scale-0: var(--fluid-min-ratio);
+	--fluid-max-scale-0: var(--fluid-max-ratio);
+	--fluid-min-size-0: (var(--fluid-min-size)) / 16;
+	--fluid-max-size-0: (var(--fluid-max-size)) / 16;
+	--step-0: calc(((var(--fluid-min-size-0) * 1rem) + (var(--fluid-max-size-0) - var(--fluid-min-size-0)) * var(--fluid-bp)));
+
+	--fluid-min-scale-1: var(--fluid-min-scale-0) * var(--fluid-min-ratio);
+	--fluid-max-scale-1: var(--fluid-max-scale-0) * var(--fluid-max-ratio);
+	--fluid-min-size-1: (var(--fluid-min-size) * var(--fluid-min-scale-0)) / 16;
+	--fluid-max-size-1: (var(--fluid-max-size) * var(--fluid-max-scale-0)) / 16;
+	--step-1: calc(((var(--fluid-min-size-1) * 1rem) + (var(--fluid-max-size-1) - var(--fluid-min-size-1)) * var(--fluid-bp)));
+
+	--fluid-min-scale-2: var(--fluid-min-scale-1) * var(--fluid-min-ratio);
+	--fluid-max-scale-2: var(--fluid-max-scale-1) * var(--fluid-max-ratio);
+	--fluid-min-size-2: (var(--fluid-min-size) * var(--fluid-min-scale-1)) / 16;
+	--fluid-max-size-2: (var(--fluid-max-size) * var(--fluid-max-scale-1)) / 16;
+	--step-2: calc(((var(--fluid-min-size-2) * 1rem) + (var(--fluid-max-size-2) - var(--fluid-min-size-2)) * var(--fluid-bp)));
+
+	--fluid-min-scale-3: var(--fluid-min-scale-2) * var(--fluid-min-ratio);
+	--fluid-max-scale-3: var(--fluid-max-scale-2) * var(--fluid-max-ratio);
+	--fluid-min-size-3: (var(--fluid-min-size) * var(--fluid-min-scale-2)) / 16;
+	--fluid-max-size-3: (var(--fluid-max-size) * var(--fluid-max-scale-2)) / 16;
+	--step-3: calc(((var(--fluid-min-size-3) * 1rem) + (var(--fluid-max-size-3) - var(--fluid-min-size-3)) * var(--fluid-bp)));
+
+	--fluid-min-scale-4: var(--fluid-min-scale-3) * var(--fluid-min-ratio);
+	--fluid-max-scale-4: var(--fluid-max-scale-3) * var(--fluid-max-ratio);
+	--fluid-min-size-4: (var(--fluid-min-size) * var(--fluid-min-scale-3)) / 16;
+	--fluid-max-size-4: (var(--fluid-max-size) * var(--fluid-max-scale-3)) / 16;
+	--step-4: calc(((var(--fluid-min-size-4) * 1rem) + (var(--fluid-max-size-4) - var(--fluid-min-size-4)) * var(--fluid-bp)));
+}
+
 $tisa: ff-tisa-sans-web-pro, sans-serif;
 $clarendon: clarendon-urw, serif;
 
@@ -23,34 +76,33 @@ $clarendon: clarendon-urw, serif;
 	color: $black;
 }
 
-// Fonts
 .font-base,
 p,
 ul,
 ol {
 	@extend %tisa-font;
-	font-size: 1rem;
+	font-size: var(--step-0);
 	line-height: 1.5rem;
 	margin: 0 0 1em;
 }
 
 .font-medium {
 	@extend %tisa-font;
-	font-size: 1.667rem;
+	font-size: var(--step-1);
 	line-height: 1.5em;
 	margin: 0 0 1.5em;
 }
 
 .font-large {
 	@extend %clarendon-font;
-	font-size: 4.632rem;
+	font-size: var(--step-2);
 	line-height: 1em;
 	margin: 0;
 }
 
 .font-xl {
 	@extend %clarendon-font;
-	font-size: 4.632rem;
+	font-size: var(--step-3);
 	line-height: 1em;
 	margin: 0;
 	text-transform: lowercase;
@@ -59,7 +111,7 @@ ol {
 .font-xxl {
 	@extend %clarendon-font;
 	font-weight: 800;
-	font-size: 7.722em;
+	font-size: var(--step-4);
 	line-height: 1em;
 	margin: 0;
 	text-transform: lowercase;
@@ -180,8 +232,8 @@ img {
 }
 
 %headline {
-	@extend .font-large;
-	line-height: 3.5rem;
+	@extend .font-xl;
+	line-height: 0.75em;
 	display: inline-block;
 	text-transform: lowercase;
 	border-bottom: 0.5rem solid $orange;
@@ -192,10 +244,10 @@ img {
 
 //  Template
 
+html,
 body {
 	@extend %tisa-font;
-	font-size: 1rem;
-	line-height: 1.5rem;
+	font-size: var(--step-0);
 }
 
 header {
@@ -217,16 +269,19 @@ header {
 	margin: 4em auto 2em;
 	h1 {
 		@extend .font-xxl;
+		line-height: 0.75em;
 		display: inline-block;
 		border-bottom: 0.5rem solid $orange;
-		margin-bottom: 2rem;
-		margin: 0 0 2rem -4rem;
+		margin: 0 0 2rem 0;
 		padding: 0 4rem;
 	}
 	h3 {
 		@extend .font-medium;
 		display: inline-block;
 		padding: 0 2rem;
+	}
+	.box {
+		padding-left: 2rem;
 	}
 }
 
@@ -249,23 +304,17 @@ a.case-study {
 	position: relative;
 	margin-bottom: 4rem;
 	picture {
-		opacity: 0.4;
 		display: block;
 		width: 100%;
 		position: relative;
 	}
 	h3 {
 		@extend %headline;
-		margin: -4.632rem auto 0 0;
-		position: absolute;
-		left: 1rem;
-		bottom: 0;
 	}
 	&:hover,
 	&:focus,
 	&:active {
 		picture {
-			opacity: 1;
 			@extend %slide-top;
 		}
 		h3 {
