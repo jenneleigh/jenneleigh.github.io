@@ -10,8 +10,8 @@ $blue-bg: #e6f4f4;
 	--fluid-max-width: 1280;
 	--fluid-min-size: 14;
 	--fluid-max-size: 16;
-	--fluid-min-ratio: 1.333;
-	--fluid-max-ratio: 1.667;
+	--fluid-min-ratio: 1.25;
+	--fluid-max-ratio: 1.5;
 
 	--fluid-screen: 100vw;
 	--fluid-bp: calc((var(--fluid-screen) - ((var(--fluid-min-width) / 16) * 1rem)) / ((var(--fluid-max-width) / 16) - (var(--fluid-min-width) / 16)));
@@ -56,6 +56,12 @@ $blue-bg: #e6f4f4;
 	--fluid-min-size-4: (var(--fluid-min-size) * var(--fluid-min-scale-3)) / 16;
 	--fluid-max-size-4: (var(--fluid-max-size) * var(--fluid-max-scale-3)) / 16;
 	--step-4: calc(((var(--fluid-min-size-4) * 1rem) + (var(--fluid-max-size-4) - var(--fluid-min-size-4)) * var(--fluid-bp)));
+
+	--fluid-min-scale-5: var(--fluid-min-scale-4) * var(--fluid-min-ratio);
+	--fluid-max-scale-5: var(--fluid-max-scale-4) * var(--fluid-max-ratio);
+	--fluid-min-size-5: (var(--fluid-min-size) * var(--fluid-min-scale-4)) / 16;
+	--fluid-max-size-5: (var(--fluid-max-size) * var(--fluid-max-scale-4)) / 16;
+	--step-5: calc(((var(--fluid-min-size-5) * 1rem) + (var(--fluid-max-size-5) - var(--fluid-min-size-5)) * var(--fluid-bp)));
 }
 
 $tisa: ff-tisa-sans-web-pro, sans-serif;
@@ -111,7 +117,7 @@ ol {
 .font-xxl {
 	@extend %clarendon-font;
 	font-weight: 800;
-	font-size: var(--step-4);
+	font-size: var(--step-5);
 	line-height: 1em;
 	margin: 0;
 	text-transform: lowercase;
@@ -190,7 +196,6 @@ nav.menu {
 	@extend .font-medium;
 	list-style: none;
 	margin: 0;
-	padding: 0;
 	li {
 		display: inline;
 		padding: 0 2rem;
@@ -255,33 +260,36 @@ header {
 	margin: 2em auto;
 	.menu {
 		text-align: right;
-		li {
-			padding: 0 0 0 4rem;
+	}
+	#logo {
+		color: $orange;
+	}
+
+	&#masthead {
+		max-width: 100%;
+		margin: 4em auto;
+		.row {
+			margin: 0 auto;
 		}
-	}
-}
-
-#logo {
-	color: $orange;
-}
-
-#masthead {
-	margin: 4em auto 2em;
-	h1 {
-		@extend .font-xxl;
-		line-height: 0.75em;
-		display: inline-block;
-		border-bottom: 0.5rem solid $orange;
-		margin: 0 0 2rem 0;
-		padding: 0 4rem;
-	}
-	h3 {
-		@extend .font-medium;
-		display: inline-block;
-		padding: 0 2rem;
-	}
-	.box {
-		padding-left: 2rem;
+		.col-xs-9 {
+			padding-left: 0;
+		}
+		h1 {
+			@extend .font-xxl;
+			line-height: 0.75em;
+			display: inline-block;
+			border-bottom: 0.5rem solid $orange;
+			margin: 0 0 2rem 0;
+			padding: 0 4rem;
+		}
+		h3 {
+			@extend .font-medium;
+			display: inline-block;
+			padding: 0 2rem;
+		}
+		.box {
+			padding-left: 2rem;
+		}
 	}
 }
 
@@ -301,12 +309,12 @@ header {
 }
 
 a.case-study {
-	position: relative;
 	margin-bottom: 4rem;
 	picture {
 		display: block;
 		width: 100%;
-		position: relative;
+		opacity: 0.75;
+		box-shadow: 2px 2px 8px rgba($color: #444346, $alpha: 0.25);
 	}
 	h3 {
 		@extend %headline;
@@ -315,10 +323,11 @@ a.case-study {
 	&:focus,
 	&:active {
 		picture {
-			@extend %slide-top;
+			// @extend %slide-top;
+			opacity: 1;
 		}
 		h3 {
-			@extend %slide-bottom;
+			// @extend %slide-bottom;
 		}
 	}
 }

@@ -3,8 +3,8 @@
   --fluid-max-width: 1280;
   --fluid-min-size: 14;
   --fluid-max-size: 16;
-  --fluid-min-ratio: 1.333;
-  --fluid-max-ratio: 1.667;
+  --fluid-min-ratio: 1.25;
+  --fluid-max-ratio: 1.5;
   --fluid-screen: 100vw;
   --fluid-bp: calc((var(--fluid-screen) - ((var(--fluid-min-width) / 16) * 1rem)) / ((var(--fluid-max-width) / 16) - (var(--fluid-min-width) / 16)));
 }
@@ -43,23 +43,28 @@
   --fluid-min-size-4: (var(--fluid-min-size) * var(--fluid-min-scale-3)) / 16;
   --fluid-max-size-4: (var(--fluid-max-size) * var(--fluid-max-scale-3)) / 16;
   --step-4: calc(((var(--fluid-min-size-4) * 1rem) + (var(--fluid-max-size-4) - var(--fluid-min-size-4)) * var(--fluid-bp)));
+  --fluid-min-scale-5: var(--fluid-min-scale-4) * var(--fluid-min-ratio);
+  --fluid-max-scale-5: var(--fluid-max-scale-4) * var(--fluid-max-ratio);
+  --fluid-min-size-5: (var(--fluid-min-size) * var(--fluid-min-scale-4)) / 16;
+  --fluid-max-size-5: (var(--fluid-max-size) * var(--fluid-max-scale-4)) / 16;
+  --step-5: calc(((var(--fluid-min-size-5) * 1rem) + (var(--fluid-max-size-5) - var(--fluid-min-size-5)) * var(--fluid-bp)));
 }
 
 .font-base,
 p,
 ul,
-ol, .font-medium, nav.menu, #masthead h3, .social-icons, #case-study h3, html,
+ol, .font-medium, nav.menu, header#masthead h3, .social-icons, #case-study h3, html,
 body {
   font-family: ff-tisa-sans-web-pro, sans-serif;
   font-weight: 300;
   color: #000;
 }
 
-.font-base strong, p strong, ul strong, ol strong, .font-medium strong, nav.menu strong, #masthead h3 strong, .social-icons strong, #case-study h3 strong, html strong, body strong {
+.font-base strong, p strong, ul strong, ol strong, .font-medium strong, nav.menu strong, header#masthead h3 strong, .social-icons strong, #case-study h3 strong, html strong, body strong {
   font-weight: 500;
 }
 
-.font-large, .font-xl, a.case-study h3, #case-study h1, .font-xxl, #masthead h1 {
+.font-large, .font-xl, a.case-study h3, #case-study h1, .font-xxl, header#masthead h1 {
   font-family: clarendon-urw, serif;
   font-weight: 700;
   color: #000;
@@ -74,7 +79,7 @@ ol {
   margin: 0 0 1em;
 }
 
-.font-medium, nav.menu, #masthead h3, .social-icons, #case-study h3 {
+.font-medium, nav.menu, header#masthead h3, .social-icons, #case-study h3 {
   font-size: var(--step-1);
   line-height: 1.5em;
   margin: 0 0 1.5em;
@@ -93,9 +98,9 @@ ol {
   text-transform: lowercase;
 }
 
-.font-xxl, #masthead h1 {
+.font-xxl, header#masthead h1 {
   font-weight: 800;
-  font-size: var(--step-4);
+  font-size: var(--step-5);
   line-height: 1em;
   margin: 0;
   text-transform: lowercase;
@@ -145,16 +150,6 @@ ol {
   }
 }
 
-a.case-study:hover picture, a.case-study:focus picture, a.case-study:active picture {
-  -webkit-animation: slide-top 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation: slide-top 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-
-a.case-study:hover h3, a.case-study:focus h3, a.case-study:active h3 {
-  -webkit-animation: slide-bottom 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation: slide-bottom 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-
 a {
   color: #0a3d62;
   text-decoration: none;
@@ -171,7 +166,6 @@ a:active, a.active {
 nav.menu {
   list-style: none;
   margin: 0;
-  padding: 0;
 }
 
 nav.menu li {
@@ -240,19 +234,24 @@ header .menu {
   text-align: right;
 }
 
-header .menu li {
-  padding: 0 0 0 4rem;
-}
-
-#logo {
+header #logo {
   color: #faa552;
 }
 
-#masthead {
-  margin: 4em auto 2em;
+header#masthead {
+  max-width: 100%;
+  margin: 4em auto;
 }
 
-#masthead h1 {
+header#masthead .row {
+  margin: 0 auto;
+}
+
+header#masthead .col-xs-9 {
+  padding-left: 0;
+}
+
+header#masthead h1 {
   line-height: 0.75em;
   display: inline-block;
   border-bottom: 0.5rem solid #faa552;
@@ -260,12 +259,12 @@ header .menu li {
   padding: 0 4rem;
 }
 
-#masthead h3 {
+header#masthead h3 {
   display: inline-block;
   padding: 0 2rem;
 }
 
-#masthead .box {
+header#masthead .box {
   padding-left: 2rem;
 }
 
@@ -285,14 +284,19 @@ header .menu li {
 }
 
 a.case-study {
-  position: relative;
   margin-bottom: 4rem;
 }
 
 a.case-study picture {
   display: block;
   width: 100%;
-  position: relative;
+  opacity: 0.75;
+  -webkit-box-shadow: 2px 2px 8px rgba(68, 67, 70, 0.25);
+          box-shadow: 2px 2px 8px rgba(68, 67, 70, 0.25);
+}
+
+a.case-study:hover picture, a.case-study:focus picture, a.case-study:active picture {
+  opacity: 1;
 }
 
 #about {
