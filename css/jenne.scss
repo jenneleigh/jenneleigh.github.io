@@ -314,7 +314,6 @@ a.case-study {
 		display: block;
 		width: 100%;
 		opacity: 0.75;
-		box-shadow: 2px 2px 8px rgba($color: #444346, $alpha: 0.25);
 	}
 	h3 {
 		@extend %headline;
@@ -325,6 +324,7 @@ a.case-study {
 		picture {
 			// @extend %slide-top;
 			opacity: 1;
+			box-shadow: 2px 2px 8px rgba($color: #444346, $alpha: 0.25);
 		}
 		h3 {
 			// @extend %slide-bottom;

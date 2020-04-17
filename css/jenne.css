@@ -291,12 +291,12 @@ a.case-study picture {
   display: block;
   width: 100%;
   opacity: 0.75;
-  -webkit-box-shadow: 2px 2px 8px rgba(68, 67, 70, 0.25);
-          box-shadow: 2px 2px 8px rgba(68, 67, 70, 0.25);
 }
 
 a.case-study:hover picture, a.case-study:focus picture, a.case-study:active picture {
   opacity: 1;
+  -webkit-box-shadow: 2px 2px 8px rgba(68, 67, 70, 0.25);
+          box-shadow: 2px 2px 8px rgba(68, 67, 70, 0.25);
 }
 
 #about {
