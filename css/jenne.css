@@ -153,6 +153,7 @@ ol {
 a {
   color: #0a3d62;
   text-decoration: none;
+  font-weight: 500;
 }
 
 a:hover, a:focus {
