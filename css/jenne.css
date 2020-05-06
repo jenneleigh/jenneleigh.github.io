@@ -176,6 +176,7 @@ nav.menu li {
 
 nav.menu a {
   color: #000;
+  font-weight: 300;
 }
 
 nav.menu a:hover, nav.menu a:focus {

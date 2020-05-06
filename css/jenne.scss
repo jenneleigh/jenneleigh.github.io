@@ -203,6 +203,7 @@ nav.menu {
 	}
 	a {
 		color: $black;
+		font-weight: 300;
 		&:hover,
 		&:focus {
 			color: $orange;
