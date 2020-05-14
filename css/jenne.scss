@@ -92,6 +92,10 @@ ol {
 	margin: 0 0 1em;
 }
 
+ul {
+	list-style: circle;
+}
+
 .font-medium {
 	@extend %tisa-font;
 	font-size: var(--step-1);
@@ -310,6 +314,10 @@ header {
 	margin: 2em auto 8rem;
 }
 
+h2#portfolio-title {
+	margin-bottom: 2rem;
+}
+
 a.case-study {
 	margin-bottom: 4rem;
 	picture {
@@ -336,7 +344,10 @@ a.case-study {
 
 #about {
 	background: $grey;
-	padding: 4rem 0 2rem;
+	padding: 0 0 2rem;
+	.row {
+		max-width: 80em;
+	}
 	.social-icons {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
@@ -347,6 +358,10 @@ a.case-study {
 			padding: 0;
 		}
 	}
+}
+
+h2#about-me {
+	margin: -0.875em auto 4rem;
 }
 
 #case-study {
@@ -367,6 +382,10 @@ a.case-study {
 		@extend .font-medium;
 		font-weight: 500;
 		margin-bottom: 2rem;
+	}
+	h4 {
+		@extend .font-base;
+		font-weight: 500;
 	}
 	#conclusions {
 		max-width: 100%;

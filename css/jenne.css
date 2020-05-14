@@ -50,7 +50,7 @@
   --step-5: calc(((var(--fluid-min-size-5) * 1rem) + (var(--fluid-max-size-5) - var(--fluid-min-size-5)) * var(--fluid-bp)));
 }
 
-.font-base,
+.font-base, #case-study h4,
 p,
 ul,
 ol, .font-medium, nav.menu, header#masthead h3, .social-icons, #case-study h3, html,
@@ -60,7 +60,7 @@ body {
   color: #000;
 }
 
-.font-base strong, p strong, ul strong, ol strong, .font-medium strong, nav.menu strong, header#masthead h3 strong, .social-icons strong, #case-study h3 strong, html strong, body strong {
+.font-base strong, #case-study h4 strong, p strong, ul strong, ol strong, .font-medium strong, nav.menu strong, header#masthead h3 strong, .social-icons strong, #case-study h3 strong, html strong, body strong {
   font-weight: 500;
 }
 
@@ -70,13 +70,17 @@ body {
   color: #000;
 }
 
-.font-base,
+.font-base, #case-study h4,
 p,
 ul,
 ol {
   font-size: var(--step-0);
   line-height: 1.5rem;
   margin: 0 0 1em;
+}
+
+ul {
+  list-style: circle;
 }
 
 .font-medium, nav.menu, header#masthead h3, .social-icons, #case-study h3 {
@@ -285,6 +289,10 @@ header#masthead .box {
   margin: 2em auto 8rem;
 }
 
+h2#portfolio-title {
+  margin-bottom: 2rem;
+}
+
 a.case-study {
   margin-bottom: 4rem;
 }
@@ -303,7 +311,11 @@ a.case-study:hover picture, a.case-study:focus picture, a.case-study:active pict
 
 #about {
   background: #e5e5e5;
-  padding: 4rem 0 2rem;
+  padding: 0 0 2rem;
+}
+
+#about .row {
+  max-width: 80em;
 }
 
 #about .social-icons {
@@ -319,6 +331,10 @@ a.case-study:hover picture, a.case-study:focus picture, a.case-study:active pict
 
 #about .social-icons a {
   padding: 0;
+}
+
+h2#about-me {
+  margin: -0.875em auto 4rem;
 }
 
 #case-study {
@@ -342,6 +358,10 @@ a.case-study:hover picture, a.case-study:focus picture, a.case-study:active pict
 #case-study h3 {
   font-weight: 500;
   margin-bottom: 2rem;
+}
+
+#case-study h4 {
+  font-weight: 500;
 }
 
 #case-study #conclusions {
