@@ -1,15 +1,15 @@
 :root {
   --fluid-min-width: 450;
-  --fluid-max-width: 1280;
-  --fluid-min-size: 14;
-  --fluid-max-size: 16;
-  --fluid-min-ratio: 1.25;
-  --fluid-max-ratio: 1.5;
+  --fluid-max-width: 1440;
+  --fluid-min-size: 20;
+  --fluid-max-size: 18;
+  --fluid-min-ratio: 1.125;
+  --fluid-max-ratio: 1.25;
   --fluid-screen: 100vw;
   --fluid-bp: calc((var(--fluid-screen) - ((var(--fluid-min-width) / 16) * 1rem)) / ((var(--fluid-max-width) / 16) - (var(--fluid-min-width) / 16)));
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
   :root {
     --fluid-screen: calc(var(--fluid-max-width) * 1px);
   }
@@ -48,34 +48,49 @@
   --fluid-min-size-5: (var(--fluid-min-size) * var(--fluid-min-scale-4)) / 16;
   --fluid-max-size-5: (var(--fluid-max-size) * var(--fluid-max-scale-4)) / 16;
   --step-5: calc(((var(--fluid-min-size-5) * 1rem) + (var(--fluid-max-size-5) - var(--fluid-min-size-5)) * var(--fluid-bp)));
+  --fluid-min-scale-6: var(--fluid-min-scale-5) * var(--fluid-min-ratio);
+  --fluid-max-scale-6: var(--fluid-max-scale-5) * var(--fluid-max-ratio);
+  --fluid-min-size-6: (var(--fluid-min-size) * var(--fluid-min-scale-5)) / 16;
+  --fluid-max-size-6: (var(--fluid-max-size) * var(--fluid-max-scale-5)) / 16;
+  --step-6: calc(((var(--fluid-min-size-6) * 1rem) + (var(--fluid-max-size-6) - var(--fluid-min-size-6)) * var(--fluid-bp)));
+  --fluid-min-scale-7: var(--fluid-min-scale-6) * var(--fluid-min-ratio);
+  --fluid-max-scale-7: var(--fluid-max-scale-6) * var(--fluid-max-ratio);
+  --fluid-min-size-7: (var(--fluid-min-size) * var(--fluid-min-scale-6)) / 16;
+  --fluid-max-size-7: (var(--fluid-max-size) * var(--fluid-max-scale-6)) / 16;
+  --step-7: calc(((var(--fluid-min-size-7) * 1rem) + (var(--fluid-max-size-7) - var(--fluid-min-size-7)) * var(--fluid-bp)));
+  --fluid-min-scale-8: var(--fluid-min-scale-7) * var(--fluid-min-ratio);
+  --fluid-max-scale-8: var(--fluid-max-scale-7) * var(--fluid-max-ratio);
+  --fluid-min-size-8: (var(--fluid-min-size) * var(--fluid-min-scale-7)) / 16;
+  --fluid-max-size-8: (var(--fluid-max-size) * var(--fluid-max-scale-7)) / 16;
+  --step-8: calc(((var(--fluid-min-size-8) * 1rem) + (var(--fluid-max-size-8) - var(--fluid-min-size-8)) * var(--fluid-bp)));
 }
 
-.font-base, #case-study h4,
+.font-step-0, nav.menu, .jump-links,
 p,
 ul,
-ol, .font-medium, nav.menu, header#masthead h3, .social-icons, #case-study h3, html,
+ol, .font-step-1, #case-study h3, #case-study h4, .font-step-2, a.button, .social-icons, .font-step-3, header#masthead h3, html,
 body {
-  font-family: ff-tisa-sans-web-pro, sans-serif;
+  font-family: "Crimson Pro", serif;
   font-weight: 300;
+  color: #4d4d4d;
+}
+
+.font-step-0 strong, nav.menu strong, .jump-links strong, p strong, ul strong, ol strong, .font-step-1 strong, #case-study h3 strong, #case-study h4 strong, .font-step-2 strong, a.button strong, .social-icons strong, .font-step-3 strong, header#masthead h3 strong, html strong, body strong {
+  font-weight: 600;
+}
+
+.font-step-4, h1, a.case-study h3, .font-step-5, .font-step-6, header#inside h1, .font-step-8, header#masthead h1, a.button {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 800;
   color: #000;
 }
 
-.font-base strong, #case-study h4 strong, p strong, ul strong, ol strong, .font-medium strong, nav.menu strong, header#masthead h3 strong, .social-icons strong, #case-study h3 strong, html strong, body strong {
-  font-weight: 500;
-}
-
-.font-large, .font-xl, a.case-study h3, #case-study h1, .font-xxl, header#masthead h1 {
-  font-family: clarendon-urw, serif;
-  font-weight: 700;
-  color: #000;
-}
-
-.font-base, #case-study h4,
+.font-step-0, nav.menu, .jump-links,
 p,
 ul,
 ol {
   font-size: var(--step-0);
-  line-height: 1.5rem;
+  line-height: 1.5em;
   margin: 0 0 1em;
 }
 
@@ -83,112 +98,139 @@ ul {
   list-style: circle;
 }
 
-.font-medium, nav.menu, header#masthead h3, .social-icons, #case-study h3 {
+.font-step-1, #case-study h3, #case-study h4 {
   font-size: var(--step-1);
-  line-height: 1.5em;
-  margin: 0 0 1.5em;
+  line-height: 1.25em;
+  margin: 0 0 2rem;
 }
 
-.font-large {
+.font-step-2, a.button, .social-icons {
   font-size: var(--step-2);
-  line-height: 1em;
+  line-height: 0.8em;
   margin: 0;
 }
 
-.font-xl, a.case-study h3, #case-study h1 {
+.font-step-3, header#masthead h3 {
   font-size: var(--step-3);
   line-height: 1em;
   margin: 0;
   text-transform: lowercase;
 }
 
-.font-xxl, header#masthead h1 {
-  font-weight: 800;
+.font-step-4, h1, a.case-study h3 {
+  font-size: var(--step-4);
+  line-height: 1em;
+  margin: 0;
+  text-transform: lowercase;
+}
+
+.font-step-5 {
   font-size: var(--step-5);
   line-height: 1em;
   margin: 0;
   text-transform: lowercase;
 }
 
-@-webkit-keyframes slide-top {
-  0% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-  100% {
-    -webkit-transform: translateY(-0.5rem);
-    transform: translateY(-0.5rem);
-  }
+.font-step-6, header#inside h1 {
+  font-size: var(--step-6);
+  line-height: 1em;
+  margin: 0;
+  text-transform: lowercase;
 }
 
-@keyframes slide-top {
-  0% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-  100% {
-    -webkit-transform: translateY(-0.25rem);
-    transform: translateY(-0.25rem);
-  }
+.font-step-8, header#masthead h1 {
+  font-size: var(--step-8);
+  line-height: 1em;
+  margin: 0;
+  text-transform: lowercase;
 }
 
-@-webkit-keyframes slide-bottom {
-  0% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-  100% {
-    -webkit-transform: translateY(0.25rem);
-    transform: translateY(0.25rem);
-  }
-}
-
-@keyframes slide-bottom {
-  0% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-  100% {
-    -webkit-transform: translateY(0.25rem);
-    transform: translateY(0.25rem);
-  }
+h1 {
+  margin-bottom: 1rem;
 }
 
 a {
-  color: #0a3d62;
+  color: #d9116b;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 a:hover, a:focus {
-  color: #faa552;
+  color: #4d4d4d;
+  border-bottom: 2px solid #4d4d4d;
 }
 
 a:active, a.active {
-  color: #0a3d62;
+  color: #d9116b;
+}
+
+a.button {
+  display: inline-block;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  background-color: #000;
+  border: 2px solid #fff;
+  padding: 2rem 4rem;
+  position: relative;
+}
+
+a.button:hover, a.button:focus {
+  color: #000;
+  background: #fff;
+  border-color: #000;
+}
+
+a.button:active {
+  color: #d9116b;
+  background: #fff;
+  border-color: #000;
+}
+
+a.button::before, a.button::after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  border: 2px solid #d9116b;
+  position: absolute;
+  z-index: -1;
+}
+
+a.button::before {
+  border-color: #11d97e;
+  left: -0.5em;
+  top: -0.5em;
+}
+
+a.button::after {
+  right: -0.5em;
+  bottom: -0.5em;
 }
 
 nav.menu {
+  font-family: "Montserrat Alternates", sans-serif;
   list-style: none;
   margin: 0;
+  text-align: right;
 }
 
 nav.menu li {
-  display: inline;
-  padding: 0 2rem;
+  padding: 1rem 0;
 }
 
 nav.menu a {
-  color: #000;
-  font-weight: 300;
+  color: #4d4d4d;
+  font-weight: 500;
 }
 
 nav.menu a:hover, nav.menu a:focus {
-  color: #faa552;
+  color: #d9116b;
+  border-bottom: 1px solid #d9116b;
 }
 
 nav.menu a:active, nav.menu a.active {
-  color: #0a3d62;
+  color: #d9116b;
 }
 
 nav.menu a.active {
@@ -196,7 +238,7 @@ nav.menu a.active {
 }
 
 .row {
-  margin: 2em auto;
+  margin: 8em auto;
 }
 
 img {
@@ -216,62 +258,185 @@ img {
   text-align: center;
 }
 
-a.case-study h3, #case-study h1 {
-  line-height: 0.75em;
-  display: inline-block;
-  text-transform: lowercase;
-  border-bottom: 0.5rem solid #faa552;
-  padding: 0 2rem 0 1rem;
+.threeD-type {
   position: relative;
-  z-index: 999;
+}
+
+.threeD-type:before, .threeD-type:after {
+  content: attr(title);
+  position: absolute;
+  color: #fff;
+  -webkit-text-fill-color: #fff;
+  /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 0.02em;
+  z-index: -1;
+  white-space: nowrap;
+}
+
+.threeD-type:before {
+  left: -0.075em;
+  top: -0.075em;
+  -webkit-text-stroke-color: #11d97e;
+}
+
+.threeD-type:after {
+  right: -0.075em;
+  bottom: -0.075em;
+  -webkit-text-stroke-color: #d9116b;
+}
+
+.threeD-img {
+  z-index: 1;
+  position: relative;
+}
+
+.threeD-img picture.img-grey {
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+
+.threeD-img picture.img-green,
+.threeD-img picture.img-pink {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  padding: inherit;
+}
+
+.threeD-img picture.img-green {
+  -webkit-transform: translate(-1rem, -1rem);
+          transform: translate(-1rem, -1rem);
+}
+
+.threeD-img picture.img-pink {
+  -webkit-transform: translate(1rem, 1rem);
+          transform: translate(1rem, 1rem);
+}
+
+.threeD-img:hover picture.img-grey, .threeD-img:focus picture.img-grey, .threeD-img:active picture.img-grey {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+}
+
+.threeD-img:hover picture.img-green, .threeD-img:focus picture.img-green, .threeD-img:active picture.img-green {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
+.threeD-img:hover picture.img-pink, .threeD-img:focus picture.img-pink, .threeD-img:active picture.img-pink {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
+#about aside, #case-study #details,
+#case-study #conclusions .text-wrap {
+  background: #fff;
+  padding: 4rem 4rem 3rem;
+  border: 2px solid #4d4d4d;
+  position: relative;
+}
+
+#about aside::before, #case-study #details::before,
+#case-study #conclusions .text-wrap::before, #about aside::after, #case-study #details::after,
+#case-study #conclusions .text-wrap::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+#about aside::before, #case-study #details::before,
+#case-study #conclusions .text-wrap::before {
+  left: -1rem;
+  top: -1rem;
+  border: 2px solid #11d97e;
+}
+
+#about aside::after, #case-study #details::after,
+#case-study #conclusions .text-wrap::after {
+  right: -1rem;
+  bottom: -1rem;
+  border: 2px solid #d9116b;
 }
 
 html,
 body {
-  font-size: var(--step-0);
+  font-size: 16px;
 }
 
 header {
   max-width: 80em;
   margin: 2em auto;
-}
-
-header .menu {
-  text-align: right;
-}
-
-header #logo {
-  color: #faa552;
+  position: relative;
 }
 
 header#masthead {
   max-width: 100%;
-  margin: 4em auto;
-}
-
-header#masthead .row {
-  margin: 0 auto;
-}
-
-header#masthead .col-xs-9 {
-  padding-left: 0;
+  text-align: center;
+  margin-top: 2rem;
 }
 
 header#masthead h1 {
-  line-height: 0.75em;
   display: inline-block;
-  border-bottom: 0.5rem solid #faa552;
-  margin: 0 0 2rem 0;
-  padding: 0 4rem;
+  position: relative;
 }
 
 header#masthead h3 {
-  display: inline-block;
-  padding: 0 2rem;
+  margin: 1.5rem 0 0 3rem;
 }
 
-header#masthead .box {
-  padding-left: 2rem;
+header #top-menu {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+}
+
+header#inside {
+  max-width: 100%;
+  margin-top: 2rem;
+}
+
+header#inside h1 {
+  display: inline-block;
+  position: relative;
+  margin-left: 2rem;
+}
+
+#portfolio {
+  max-width: 80em;
+  margin: 2em auto 8rem;
+}
+
+a.case-study {
+  margin-bottom: 8rem;
+}
+
+a.case-study h3 {
+  margin-left: -8.333%;
+}
+
+a.case-study p.font-step-2, a.case-study p.social-icons {
+  margin: 1rem 0;
+}
+
+a.case-study p.read-more {
+  font-weight: 600;
+}
+
+a.case-study section {
+  position: relative;
+  z-index: 5;
+}
+
+a.case-study:hover, a.case-study:focus {
+  border-bottom: none;
+}
+
+a.case-study:hover p.read-more, a.case-study:focus p.read-more {
+  color: #d9116b;
 }
 
 .social-icons {
@@ -284,57 +449,47 @@ header#masthead .box {
   padding: 0 1rem;
 }
 
-#portfolio {
+.social-icons a:hover, .social-icons a:focus, .social-icons a:active {
+  border-bottom: none;
+  color: #11d97e;
+}
+
+.jump-links {
+  font-family: "Montserrat Alternates", sans-serif;
+  text-align: center;
+  margin: 0;
+  text-transform: lowercase;
+}
+
+.jump-links a {
+  display: inline-block;
+  padding: 0 1rem;
+}
+
+.jump-links a:hover, .jump-links a:focus, .jump-links a:active {
+  border-bottom: none;
+  color: #11d97e;
+}
+
+footer#contact {
+  background: #000;
+  padding: 5rem 0;
+  margin: 8rem 0 0;
+  position: relative;
+  z-index: 1;
+}
+
+footer#contact .row {
+  margin: 0 auto;
   max-width: 80em;
-  margin: 2em auto 8rem;
-}
-
-h2#portfolio-title {
-  margin-bottom: 2rem;
-}
-
-a.case-study {
-  margin-bottom: 4rem;
-}
-
-a.case-study picture {
-  display: block;
-  width: 100%;
-  opacity: 0.75;
-}
-
-a.case-study:hover picture, a.case-study:focus picture, a.case-study:active picture {
-  opacity: 1;
-  -webkit-box-shadow: 2px 2px 8px rgba(68, 67, 70, 0.25);
-          box-shadow: 2px 2px 8px rgba(68, 67, 70, 0.25);
-}
-
-#about {
-  background: #e5e5e5;
-  padding: 0 0 2rem;
 }
 
 #about .row {
   max-width: 80em;
 }
 
-#about .social-icons {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
-  -ms-grid-rows: (1fr)[2];
-      grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 0.5rem;
-  grid-row-gap: 0.5rem;
-}
-
-#about .social-icons a {
-  padding: 0;
-}
-
-h2#about-me {
-  margin: -0.875em auto 4rem;
+#about aside {
+  padding: 1rem;
 }
 
 #case-study {
@@ -346,32 +501,17 @@ h2#about-me {
   margin: 0 auto 4rem;
 }
 
-#case-study h1 {
-  margin-bottom: -0.5rem;
-}
-
-#case-study #details {
-  background: #e5e5e5;
-  padding: 4rem 4rem 3rem;
-}
-
 #case-study h3 {
-  font-weight: 500;
-  margin-bottom: 2rem;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 700;
+  color: #000;
+  text-transform: lowercase;
+  margin-bottom: 1rem;
 }
 
 #case-study h4 {
-  font-weight: 500;
-}
-
-#case-study #conclusions {
-  max-width: 100%;
-  background: #e6f4f4;
-}
-
-#case-study #conclusions .row {
-  margin: 0 auto;
-  padding: 4rem 0 3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
 
 #case-study-bottom {

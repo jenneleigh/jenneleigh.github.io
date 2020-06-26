@@ -1,23 +1,23 @@
 $black: #000;
 $white: #fff;
-$grey: #e5e5e5;
-$orange: #faa552;
-$blue: #0a3d62;
-$blue-bg: #e6f4f4;
+$grey: #4d4d4d;
+$grey-100: #d2d2d2;
+$green: #11d97e;
+$pink: #d9116b;
 
 :root {
 	--fluid-min-width: 450;
-	--fluid-max-width: 1280;
-	--fluid-min-size: 14;
-	--fluid-max-size: 16;
-	--fluid-min-ratio: 1.25;
-	--fluid-max-ratio: 1.5;
+	--fluid-max-width: 1440;
+	--fluid-min-size: 20;
+	--fluid-max-size: 18;
+	--fluid-min-ratio: 1.125;
+	--fluid-max-ratio: 1.25;
 
 	--fluid-screen: 100vw;
 	--fluid-bp: calc((var(--fluid-screen) - ((var(--fluid-min-width) / 16) * 1rem)) / ((var(--fluid-max-width) / 16) - (var(--fluid-min-width) / 16)));
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
 	:root {
 		--fluid-screen: calc(var(--fluid-max-width) * 1px);
 	}
@@ -62,33 +62,51 @@ $blue-bg: #e6f4f4;
 	--fluid-min-size-5: (var(--fluid-min-size) * var(--fluid-min-scale-4)) / 16;
 	--fluid-max-size-5: (var(--fluid-max-size) * var(--fluid-max-scale-4)) / 16;
 	--step-5: calc(((var(--fluid-min-size-5) * 1rem) + (var(--fluid-max-size-5) - var(--fluid-min-size-5)) * var(--fluid-bp)));
+
+	--fluid-min-scale-6: var(--fluid-min-scale-5) * var(--fluid-min-ratio);
+	--fluid-max-scale-6: var(--fluid-max-scale-5) * var(--fluid-max-ratio);
+	--fluid-min-size-6: (var(--fluid-min-size) * var(--fluid-min-scale-5)) / 16;
+	--fluid-max-size-6: (var(--fluid-max-size) * var(--fluid-max-scale-5)) / 16;
+	--step-6: calc(((var(--fluid-min-size-6) * 1rem) + (var(--fluid-max-size-6) - var(--fluid-min-size-6)) * var(--fluid-bp)));
+
+	--fluid-min-scale-7: var(--fluid-min-scale-6) * var(--fluid-min-ratio);
+	--fluid-max-scale-7: var(--fluid-max-scale-6) * var(--fluid-max-ratio);
+	--fluid-min-size-7: (var(--fluid-min-size) * var(--fluid-min-scale-6)) / 16;
+	--fluid-max-size-7: (var(--fluid-max-size) * var(--fluid-max-scale-6)) / 16;
+	--step-7: calc(((var(--fluid-min-size-7) * 1rem) + (var(--fluid-max-size-7) - var(--fluid-min-size-7)) * var(--fluid-bp)));
+
+	--fluid-min-scale-8: var(--fluid-min-scale-7) * var(--fluid-min-ratio);
+	--fluid-max-scale-8: var(--fluid-max-scale-7) * var(--fluid-max-ratio);
+	--fluid-min-size-8: (var(--fluid-min-size) * var(--fluid-min-scale-7)) / 16;
+	--fluid-max-size-8: (var(--fluid-max-size) * var(--fluid-max-scale-7)) / 16;
+	--step-8: calc(((var(--fluid-min-size-8) * 1rem) + (var(--fluid-max-size-8) - var(--fluid-min-size-8)) * var(--fluid-bp)));
 }
 
-$tisa: ff-tisa-sans-web-pro, sans-serif;
-$clarendon: clarendon-urw, serif;
+$serif: "Crimson Pro", serif;
+$sans-serif: "Montserrat Alternates", sans-serif;
 
-%tisa-font {
-	font-family: $tisa;
+%serif-font {
+	font-family: $serif;
 	font-weight: 300;
-	color: $black;
+	color: $grey;
 	strong {
-		font-weight: 500;
+		font-weight: 600;
 	}
 }
 
-%clarendon-font {
-	font-family: $clarendon;
-	font-weight: 700;
+%sans-serif-font {
+	font-family: $sans-serif;
+	font-weight: 800;
 	color: $black;
 }
 
-.font-base,
+.font-step-0,
 p,
 ul,
 ol {
-	@extend %tisa-font;
+	@extend %serif-font;
 	font-size: var(--step-0);
-	line-height: 1.5rem;
+	line-height: 1.5em;
 	margin: 0 0 1em;
 }
 
@@ -96,125 +114,151 @@ ul {
 	list-style: circle;
 }
 
-.font-medium {
-	@extend %tisa-font;
+.font-step-1 {
+	@extend %serif-font;
 	font-size: var(--step-1);
-	line-height: 1.5em;
-	margin: 0 0 1.5em;
+	line-height: 1.25em;
+	margin: 0 0 2rem;
 }
 
-.font-large {
-	@extend %clarendon-font;
+.font-step-2 {
+	@extend %serif-font;
 	font-size: var(--step-2);
-	line-height: 1em;
+	line-height: 0.8em;
 	margin: 0;
 }
 
-.font-xl {
-	@extend %clarendon-font;
+.font-step-3 {
+	@extend %serif-font;
 	font-size: var(--step-3);
 	line-height: 1em;
 	margin: 0;
 	text-transform: lowercase;
 }
 
-.font-xxl {
-	@extend %clarendon-font;
-	font-weight: 800;
+.font-step-4 {
+	@extend %sans-serif-font;
+	font-size: var(--step-4);
+	line-height: 1em;
+	margin: 0;
+	text-transform: lowercase;
+}
+
+.font-step-5 {
+	@extend %sans-serif-font;
 	font-size: var(--step-5);
 	line-height: 1em;
 	margin: 0;
 	text-transform: lowercase;
 }
 
+.font-step-6 {
+	@extend %sans-serif-font;
+	font-size: var(--step-6);
+	line-height: 1em;
+	margin: 0;
+	text-transform: lowercase;
+}
+
+.font-step-8 {
+	@extend %sans-serif-font;
+	font-size: var(--step-8);
+	line-height: 1em;
+	margin: 0;
+	text-transform: lowercase;
+}
+
+h1 {
+	@extend .font-step-4;
+	margin-bottom: 1rem;
+}
+
 // Animations
-
-@-webkit-keyframes slide-top {
-	0% {
-		-webkit-transform: translateY(0);
-		transform: translateY(0);
-	}
-	100% {
-		-webkit-transform: translateY(-0.5rem);
-		transform: translateY(-0.5rem);
-	}
-}
-@keyframes slide-top {
-	0% {
-		-webkit-transform: translateY(0);
-		transform: translateY(0);
-	}
-	100% {
-		-webkit-transform: translateY(-0.25rem);
-		transform: translateY(-0.25rem);
-	}
-}
-
-@-webkit-keyframes slide-bottom {
-	0% {
-		-webkit-transform: translateY(0);
-		transform: translateY(0);
-	}
-	100% {
-		-webkit-transform: translateY(0.25rem);
-		transform: translateY(0.25rem);
-	}
-}
-@keyframes slide-bottom {
-	0% {
-		-webkit-transform: translateY(0);
-		transform: translateY(0);
-	}
-	100% {
-		-webkit-transform: translateY(0.25rem);
-		transform: translateY(0.25rem);
-	}
-}
-
-%slide-top {
-	-webkit-animation: slide-top 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-	animation: slide-top 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-
-%slide-bottom {
-	-webkit-animation: slide-bottom 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-	animation: slide-bottom 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
 
 //	Defaults
 
 a {
-	color: $blue;
+	color: $pink;
 	text-decoration: none;
-	font-weight: 500;
+	font-weight: 600;
 	&:hover,
 	&:focus {
-		color: $orange;
+		color: $grey;
+		border-bottom: 2px solid $grey;
 	}
 	&:active,
 	&.active {
-		color: $blue;
+		color: $pink;
+	}
+}
+
+a.button {
+	display: inline-block;
+	@extend .font-step-2;
+	@extend %sans-serif-font;
+	font-weight: 700;
+	color: $white;
+	text-align: center;
+	background-color: $black;
+	border: 2px solid $white;
+	padding: 2rem 4rem;
+	position: relative;
+	&:hover,
+	&:focus {
+		color: $black;
+		background: $white;
+		border-color: $black;
+	}
+	&:active {
+		color: $pink;
+		background: $white;
+		border-color: $black;
+	}
+	&::before,
+	&::after {
+		display: block;
+		content: "";
+		width: 100%;
+		height: 100%;
+		border: 2px solid $pink;
+		position: absolute;
+		z-index: -1;
+	}
+	&::before {
+		border-color: $green;
+		left: -0.5em;
+		top: -0.5em;
+	}
+	&::after {
+		right: -0.5em;
+		bottom: -0.5em;
+	}
+	&:hover,
+	&:focus,
+	&:active {
 	}
 }
 
 nav.menu {
-	@extend .font-medium;
+	@extend .font-step-0;
+	font-family: $sans-serif;
 	list-style: none;
 	margin: 0;
+	text-align: right;
 	li {
-		display: inline;
-		padding: 0 2rem;
+		padding: 1rem 0;
 	}
 	a {
-		color: $black;
-		font-weight: 300;
+		color: $grey;
+		font-weight: 500;
 		&:hover,
 		&:focus {
-			color: $orange;
+			color: $pink;
+			border-bottom: 1px solid $pink;
 		}
 		&:active,
 		&.active {
-			color: $blue;
+			color: $pink;
 		}
 		&.active {
 			cursor: default;
@@ -223,7 +267,7 @@ nav.menu {
 }
 
 .row {
-	margin: 2em auto;
+	margin: 8em auto;
 }
 img {
 	max-width: 100%;
@@ -242,70 +286,133 @@ img {
 	text-align: center;
 }
 
-%headline {
-	@extend .font-xl;
-	line-height: 0.75em;
-	display: inline-block;
-	text-transform: lowercase;
-	border-bottom: 0.5rem solid $orange;
-	padding: 0 2rem 0 1rem;
+.threeD-type {
 	position: relative;
-	z-index: 999;
+	&:before,
+	&:after {
+		content: attr(title);
+		position: absolute;
+		color: $white;
+		-webkit-text-fill-color: $white; /* Will override color (regardless of order) */
+		-webkit-text-stroke-width: 0.02em;
+		z-index: -1;
+		white-space: nowrap;
+	}
+	&:before {
+		left: -0.075em;
+		top: -0.075em;
+		-webkit-text-stroke-color: $green;
+	}
+	&:after {
+		right: -0.075em;
+		bottom: -0.075em;
+		-webkit-text-stroke-color: $pink;
+	}
+}
+
+.threeD-img {
+	z-index: 1;
+	position: relative;
+	picture.img-grey {
+		filter: grayscale(1);
+	}
+	picture.img-green,
+	picture.img-pink {
+		position: absolute;
+		z-index: -1;
+		left: 0;
+		top: 0;
+		padding: inherit;
+	}
+	picture.img-green {
+		transform: translate(-1rem, -1rem);
+	}
+
+	picture.img-pink {
+		transform: translate(1rem, 1rem);
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		picture.img-grey {
+			filter: grayscale(0);
+		}
+		picture.img-green {
+			transform: translate(0, 0);
+		}
+
+		picture.img-pink {
+			transform: translate(0, 0);
+		}
+	}
+}
+
+%threeD-box {
+	background: $white;
+	padding: 4rem 4rem 3rem;
+	border: 2px solid $grey;
+	position: relative;
+	&::before,
+	&::after {
+		display: block;
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+	}
+	&::before {
+		left: -1rem;
+		top: -1rem;
+		border: 2px solid $green;
+	}
+	&::after {
+		right: -1rem;
+		bottom: -1rem;
+		border: 2px solid $pink;
+	}
 }
 
 //  Template
 
 html,
 body {
-	@extend %tisa-font;
-	font-size: var(--step-0);
+	@extend %serif-font;
+	font-size: 16px;
 }
 
 header {
 	max-width: 80em;
 	margin: 2em auto;
-	.menu {
-		text-align: right;
-	}
-	#logo {
-		color: $orange;
-	}
-
+	position: relative;
 	&#masthead {
 		max-width: 100%;
-		margin: 4em auto;
-		.row {
-			margin: 0 auto;
-		}
-		.col-xs-9 {
-			padding-left: 0;
-		}
+		text-align: center;
+		margin-top: 2rem;
 		h1 {
-			@extend .font-xxl;
-			line-height: 0.75em;
+			@extend .font-step-8;
 			display: inline-block;
-			border-bottom: 0.5rem solid $orange;
-			margin: 0 0 2rem 0;
-			padding: 0 4rem;
+			position: relative;
 		}
 		h3 {
-			@extend .font-medium;
-			display: inline-block;
-			padding: 0 2rem;
-		}
-		.box {
-			padding-left: 2rem;
+			@extend .font-step-3;
+			margin: 1.5rem 0 0 3rem;
 		}
 	}
-}
-
-.social-icons {
-	@extend .font-medium;
-	text-align: center;
-	margin: 0;
-	a {
-		display: inline-block;
-		padding: 0 1rem;
+	#top-menu {
+		position: fixed;
+		top: 2rem;
+		right: 2rem;
+	}
+	&#inside {
+		max-width: 100%;
+		margin-top: 2rem;
+		h1 {
+			@extend .font-step-6;
+			display: inline-block;
+			position: relative;
+			margin-left: 2rem;
+		}
 	}
 }
 
@@ -314,54 +421,85 @@ header {
 	margin: 2em auto 8rem;
 }
 
-h2#portfolio-title {
-	margin-bottom: 2rem;
-}
-
 a.case-study {
-	margin-bottom: 4rem;
-	picture {
-		display: block;
-		width: 100%;
-		opacity: 0.75;
-	}
+	margin-bottom: 8rem;
 	h3 {
-		@extend %headline;
+		@extend .font-step-4;
+		margin-left: -8.333%;
+	}
+	p.font-step-2 {
+		margin: 1rem 0;
+	}
+	p.read-more {
+		font-weight: 600;
+	}
+	section {
+		position: relative;
+		z-index: 5;
 	}
 	&:hover,
-	&:focus,
-	&:active {
-		picture {
-			// @extend %slide-top;
-			opacity: 1;
-			box-shadow: 2px 2px 8px rgba($color: #444346, $alpha: 0.25);
+	&:focus {
+		border-bottom: none;
+		p.read-more {
+			color: $pink;
 		}
-		h3 {
-			// @extend %slide-bottom;
+	}
+}
+
+.social-icons {
+	@extend .font-step-2;
+	text-align: center;
+	margin: 0;
+	a {
+		display: inline-block;
+		padding: 0 1rem;
+		&:hover,
+		&:focus,
+		&:active {
+			border-bottom: none;
+			color: $green;
 		}
+	}
+}
+
+.jump-links {
+	@extend .font-step-0;
+	font-family: $sans-serif;
+	text-align: center;
+	margin: 0;
+	text-transform: lowercase;
+	a {
+		display: inline-block;
+		padding: 0 1rem;
+		&:hover,
+		&:focus,
+		&:active {
+			border-bottom: none;
+			color: $green;
+		}
+	}
+}
+
+footer#contact {
+	background: $black;
+	padding: 5rem 0;
+	margin: 8rem 0 0;
+	position: relative;
+	z-index: 1;
+	.row {
+		margin: 0 auto;
+		max-width: 80em;
 	}
 }
 
 #about {
-	background: $grey;
-	padding: 0 0 2rem;
 	.row {
 		max-width: 80em;
 	}
-	.social-icons {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		grid-template-rows: repeat(2, 1fr);
-		grid-column-gap: 0.5rem;
-		grid-row-gap: 0.5rem;
-		a {
-			padding: 0;
-		}
+	aside {
+		@extend %threeD-box;
+		padding: 1rem;
 	}
-}
-
-h2#about-me {
-	margin: -0.875em auto 4rem;
 }
 
 #case-study {
@@ -370,30 +508,22 @@ h2#about-me {
 		max-width: 80em;
 		margin: 0 auto 4rem;
 	}
-	h1 {
-		@extend %headline;
-		margin-bottom: -0.5rem;
-	}
-	#details {
-		background: $grey;
-		padding: 4rem 4rem 3rem;
+	#details,
+	#conclusions .text-wrap {
+		@extend %threeD-box;
 	}
 	h3 {
-		@extend .font-medium;
-		font-weight: 500;
-		margin-bottom: 2rem;
+		@extend .font-step-1;
+		font-family: $sans-serif;
+		font-weight: 700;
+		color: $black;
+		text-transform: lowercase;
+		margin-bottom: 1rem;
 	}
 	h4 {
-		@extend .font-base;
-		font-weight: 500;
-	}
-	#conclusions {
-		max-width: 100%;
-		background: $blue-bg;
-		.row {
-			margin: 0 auto;
-			padding: 4rem 0 3rem;
-		}
+		@extend .font-step-1;
+		font-weight: 600;
+		margin-bottom: 1rem;
 	}
 }
 
