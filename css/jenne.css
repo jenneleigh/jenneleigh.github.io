@@ -79,7 +79,7 @@ body {
   font-weight: 600;
 }
 
-.font-step-4, h1, a.case-study h3, .font-step-5, .font-step-6, header#inside h1, .font-step-8, header#masthead h1, a.button {
+.font-step-4, h1, .case-study a h3, .font-step-5, .font-step-6, header#inside h1, .font-step-8, header#masthead h1, a.button {
   font-family: "Montserrat Alternates", sans-serif;
   font-weight: 800;
   color: #000;
@@ -117,7 +117,7 @@ ul {
   text-transform: lowercase;
 }
 
-.font-step-4, h1, a.case-study h3 {
+.font-step-4, h1, .case-study a h3 {
   font-size: var(--step-4);
   line-height: 1em;
   margin: 0;
@@ -173,18 +173,9 @@ a.button {
   border: 2px solid #fff;
   padding: 2rem 4rem;
   position: relative;
-}
-
-a.button:hover, a.button:focus {
-  color: #000;
-  background: #fff;
-  border-color: #000;
-}
-
-a.button:active {
-  color: #d9116b;
-  background: #fff;
-  border-color: #000;
+  transition: background-color 0.5s ease-in-out;
+  -moz-transition: background-color 0.5s ease-in-out;
+  -webkit-transition: background-color 0.5s ease-in-out;
 }
 
 a.button::before, a.button::after {
@@ -195,17 +186,42 @@ a.button::before, a.button::after {
   border: 2px solid #d9116b;
   position: absolute;
   z-index: -1;
+  left: 0;
+  top: 0;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  -moz-transition: transform 0.5s ease-in-out;
+  -webkit-transition: transform 0.5s ease-in-out;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 a.button::before {
   border-color: #11d97e;
-  left: -0.5em;
-  top: -0.5em;
+  -webkit-transform: translate(calc(-0.5rem - 2px), calc(-0.5rem - 2px));
+          transform: translate(calc(-0.5rem - 2px), calc(-0.5rem - 2px));
 }
 
 a.button::after {
-  right: -0.5em;
-  bottom: -0.5em;
+  -webkit-transform: translate(calc(0.5rem + 2px), calc(0.5rem + 2px));
+          transform: translate(calc(0.5rem + 2px), calc(0.5rem + 2px));
+}
+
+a.button:hover, a.button:focus, a.button:active {
+  color: #000;
+  background: #fff;
+  border-color: #000;
+}
+
+a.button:hover::before, a.button:hover::after, a.button:focus::before, a.button:focus::after, a.button:active::before, a.button:active::after {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
+a.button:active {
+  color: #d9116b;
 }
 
 nav.menu {
@@ -293,6 +309,12 @@ img {
 .threeD-img picture.img-grey {
   -webkit-filter: grayscale(1);
           filter: grayscale(1);
+  -webkit-transition: -webkit-filter 0.5s ease-in-out;
+  transition: -webkit-filter 0.5s ease-in-out;
+  transition: filter 0.5s ease-in-out;
+  transition: filter 0.5s ease-in-out, -webkit-filter 0.5s ease-in-out;
+  -moz-transition: filter 0.5s ease-in-out;
+  -webkit-transition: filter 0.5s ease-in-out;
 }
 
 .threeD-img picture.img-green,
@@ -302,6 +324,12 @@ img {
   left: 0;
   top: 0;
   padding: inherit;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  -moz-transition: transform 0.5s ease-in-out;
+  -webkit-transition: transform 0.5s ease-in-out;
 }
 
 .threeD-img picture.img-green {
@@ -410,32 +438,32 @@ header#inside h1 {
   margin: 2em auto 8rem;
 }
 
-a.case-study {
+.case-study {
   margin-bottom: 8rem;
 }
 
-a.case-study h3 {
+.case-study a h3 {
   margin-left: -8.333%;
 }
 
-a.case-study p.font-step-2, a.case-study p.social-icons {
+.case-study a p.font-step-2, .case-study a p.social-icons {
   margin: 1rem 0;
 }
 
-a.case-study p.read-more {
+.case-study a p.read-more {
   font-weight: 600;
 }
 
-a.case-study section {
+.case-study a[role="section"] {
   position: relative;
   z-index: 5;
 }
 
-a.case-study:hover, a.case-study:focus {
+.case-study a:hover, .case-study a:focus, .case-study a:active {
   border-bottom: none;
 }
 
-a.case-study:hover p.read-more, a.case-study:focus p.read-more {
+.case-study a:hover p.read-more, .case-study a:focus p.read-more, .case-study a:active p.read-more {
   color: #d9116b;
 }
 

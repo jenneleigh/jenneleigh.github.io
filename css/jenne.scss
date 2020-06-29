@@ -203,17 +203,9 @@ a.button {
 	border: 2px solid $white;
 	padding: 2rem 4rem;
 	position: relative;
-	&:hover,
-	&:focus {
-		color: $black;
-		background: $white;
-		border-color: $black;
-	}
-	&:active {
-		color: $pink;
-		background: $white;
-		border-color: $black;
-	}
+	transition: background-color 0.5s ease-in-out;
+	-moz-transition: background-color 0.5s ease-in-out;
+	-webkit-transition: background-color 0.5s ease-in-out;
 	&::before,
 	&::after {
 		display: block;
@@ -223,19 +215,33 @@ a.button {
 		border: 2px solid $pink;
 		position: absolute;
 		z-index: -1;
+		left: 0;
+		top: 0;
+		transition: transform 0.5s ease-in-out;
+		-moz-transition: transform 0.5s ease-in-out;
+		-webkit-transition: transform 0.5s ease-in-out;
+		box-sizing: border-box;
 	}
 	&::before {
 		border-color: $green;
-		left: -0.5em;
-		top: -0.5em;
+		transform: translate(calc(-0.5rem - 2px), calc(-0.5rem - 2px));
 	}
 	&::after {
-		right: -0.5em;
-		bottom: -0.5em;
+		transform: translate(calc(0.5rem + 2px), calc(0.5rem + 2px));
 	}
 	&:hover,
 	&:focus,
 	&:active {
+		color: $black;
+		background: $white;
+		border-color: $black;
+		&::before,
+		&::after {
+			transform: translate(0, 0);
+		}
+	}
+	&:active {
+		color: $pink;
 	}
 }
 
@@ -315,6 +321,9 @@ img {
 	position: relative;
 	picture.img-grey {
 		filter: grayscale(1);
+		transition: filter 0.5s ease-in-out;
+		-moz-transition: filter 0.5s ease-in-out;
+		-webkit-transition: filter 0.5s ease-in-out;
 	}
 	picture.img-green,
 	picture.img-pink {
@@ -323,6 +332,9 @@ img {
 		left: 0;
 		top: 0;
 		padding: inherit;
+		transition: transform 0.5s ease-in-out;
+		-moz-transition: transform 0.5s ease-in-out;
+		-webkit-transition: transform 0.5s ease-in-out;
 	}
 	picture.img-green {
 		transform: translate(-1rem, -1rem);
@@ -421,28 +433,34 @@ header {
 	margin: 2em auto 8rem;
 }
 
-a.case-study {
+.case-study {
 	margin-bottom: 8rem;
-	h3 {
-		@extend .font-step-4;
-		margin-left: -8.333%;
-	}
-	p.font-step-2 {
-		margin: 1rem 0;
-	}
-	p.read-more {
-		font-weight: 600;
-	}
-	section {
-		position: relative;
-		z-index: 5;
-	}
-	&:hover,
-	&:focus {
-		border-bottom: none;
-		p.read-more {
-			color: $pink;
+	a {
+		h3 {
+			@extend .font-step-4;
+			margin-left: -8.333%;
 		}
+		p.font-step-2 {
+			margin: 1rem 0;
+		}
+		p.read-more {
+			font-weight: 600;
+		}
+		&[role="section"] {
+			position: relative;
+			z-index: 5;
+		}
+		&:hover,
+		&:focus,
+		&:active {
+			border-bottom: none;
+			p.read-more {
+				color: $pink;
+			}
+		}
+	}
+
+	a {
 	}
 }
 
