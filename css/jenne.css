@@ -149,6 +149,13 @@ h1 {
   margin-bottom: 1rem;
 }
 
+a.button, a.button::before, a.button::after, .threeD-img picture.img-grey, .threeD-img picture.img-green,
+.threeD-img picture.img-pink {
+  transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+}
+
 a {
   color: #d9116b;
   text-decoration: none;
@@ -173,9 +180,6 @@ a.button {
   border: 2px solid #fff;
   padding: 2rem 4rem;
   position: relative;
-  transition: background-color 0.5s ease-in-out;
-  -moz-transition: background-color 0.5s ease-in-out;
-  -webkit-transition: background-color 0.5s ease-in-out;
 }
 
 a.button::before, a.button::after {
@@ -188,12 +192,6 @@ a.button::before, a.button::after {
   z-index: -1;
   left: 0;
   top: 0;
-  -webkit-transition: -webkit-transform 0.5s ease-in-out;
-  transition: -webkit-transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
-  -moz-transition: transform 0.5s ease-in-out;
-  -webkit-transition: transform 0.5s ease-in-out;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -309,12 +307,6 @@ img {
 .threeD-img picture.img-grey {
   -webkit-filter: grayscale(1);
           filter: grayscale(1);
-  -webkit-transition: -webkit-filter 0.5s ease-in-out;
-  transition: -webkit-filter 0.5s ease-in-out;
-  transition: filter 0.5s ease-in-out;
-  transition: filter 0.5s ease-in-out, -webkit-filter 0.5s ease-in-out;
-  -moz-transition: filter 0.5s ease-in-out;
-  -webkit-transition: filter 0.5s ease-in-out;
 }
 
 .threeD-img picture.img-green,
@@ -324,12 +316,6 @@ img {
   left: 0;
   top: 0;
   padding: inherit;
-  -webkit-transition: -webkit-transform 0.5s ease-in-out;
-  transition: -webkit-transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
-  -moz-transition: transform 0.5s ease-in-out;
-  -webkit-transition: transform 0.5s ease-in-out;
 }
 
 .threeD-img picture.img-green {

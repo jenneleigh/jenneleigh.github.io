@@ -175,6 +175,12 @@ h1 {
 
 // Animations
 
+%animation {
+	transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+}
+
 //	Defaults
 
 a {
@@ -203,9 +209,7 @@ a.button {
 	border: 2px solid $white;
 	padding: 2rem 4rem;
 	position: relative;
-	transition: background-color 0.5s ease-in-out;
-	-moz-transition: background-color 0.5s ease-in-out;
-	-webkit-transition: background-color 0.5s ease-in-out;
+	@extend %animation;
 	&::before,
 	&::after {
 		display: block;
@@ -217,10 +221,8 @@ a.button {
 		z-index: -1;
 		left: 0;
 		top: 0;
-		transition: transform 0.5s ease-in-out;
-		-moz-transition: transform 0.5s ease-in-out;
-		-webkit-transition: transform 0.5s ease-in-out;
 		box-sizing: border-box;
+		@extend %animation;
 	}
 	&::before {
 		border-color: $green;
@@ -321,9 +323,7 @@ img {
 	position: relative;
 	picture.img-grey {
 		filter: grayscale(1);
-		transition: filter 0.5s ease-in-out;
-		-moz-transition: filter 0.5s ease-in-out;
-		-webkit-transition: filter 0.5s ease-in-out;
+		@extend %animation;
 	}
 	picture.img-green,
 	picture.img-pink {
@@ -332,9 +332,7 @@ img {
 		left: 0;
 		top: 0;
 		padding: inherit;
-		transition: transform 0.5s ease-in-out;
-		-moz-transition: transform 0.5s ease-in-out;
-		-webkit-transition: transform 0.5s ease-in-out;
+		@extend %animation;
 	}
 	picture.img-green {
 		transform: translate(-1rem, -1rem);
