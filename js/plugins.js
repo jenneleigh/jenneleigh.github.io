@@ -43,15 +43,13 @@
 
 // // Place any jQuery/helper plugins in here.
 
-// {
-// 	var random = document.getElementById("random");
-
-// 	var phrase = ["creative-type person", "caffeine addict", "crazy cat lady", "esoteric ice cream hunter", "floof admirer", "sunset spotter", "Animal Crossing fixer", "birb spotter"];
-
-// 	var randomPhrase = phrase[Math.floor(Math.random() * phrase.length)];
-
-// 	random.innerHTML = randomPhrase;
-// }
+$(document).ready(function () {
+	$(".menu-toggle a").click(function () {
+		$(".menu").slideToggle(700);
+		$("i.open").fadeToggle(100);
+		$("i.closed").fadeToggle(100);
+	});
+});
 
 // Can also be included with a regular script tag
 

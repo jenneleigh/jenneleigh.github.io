@@ -8,7 +8,7 @@ $pink: #d9116b;
 :root {
 	--fluid-min-width: 450;
 	--fluid-max-width: 1440;
-	--fluid-min-size: 20;
+	--fluid-min-size: 18;
 	--fluid-max-size: 18;
 	--fluid-min-ratio: 1.125;
 	--fluid-max-ratio: 1.25;
@@ -207,7 +207,8 @@ a.button {
 	text-align: center;
 	background-color: $black;
 	border: 2px solid $white;
-	padding: 2rem 4rem;
+	padding: 1.5rem 3rem;
+	margin-bottom: 2rem;
 	position: relative;
 	@extend %animation;
 	&::before,
@@ -251,13 +252,17 @@ nav.menu {
 	@extend .font-step-0;
 	font-family: $sans-serif;
 	list-style: none;
-	margin: 0;
-	text-align: right;
+	margin: 0 0 2rem;
+	padding: 0;
+	text-align: center;
+	background: $black;
+	display: none;
+	width: 100%;
 	li {
 		padding: 1rem 0;
 	}
 	a {
-		color: $grey;
+		color: $white;
 		font-weight: 500;
 		&:hover,
 		&:focus {
@@ -273,9 +278,26 @@ nav.menu {
 		}
 	}
 }
+.menu-toggle {
+	background: none;
+	color: $grey;
+	font-weight: 500;
+	text-align: center;
+	padding: 1rem 0;
+	a {
+		i.closed {
+			display: none;
+		}
+		&:hover,
+		&:focus,
+		&:active {
+			border-bottom: none;
+		}
+	}
+}
 
 .row {
-	margin: 8em auto;
+	margin: 4em auto;
 }
 img {
 	max-width: 100%;
@@ -398,30 +420,25 @@ header {
 	&#masthead {
 		max-width: 100%;
 		text-align: center;
-		margin-top: 2rem;
+		margin-top: 0;
 		h1 {
 			@extend .font-step-8;
 			display: inline-block;
 			position: relative;
+			margin-top: 2rem;
 		}
 		h3 {
 			@extend .font-step-3;
 			margin: 1.5rem 0 0 3rem;
 		}
 	}
-	#top-menu {
-		position: fixed;
-		top: 2rem;
-		right: 2rem;
-	}
 	&#inside {
 		max-width: 100%;
-		margin-top: 2rem;
+		margin-top: 0;
 		h1 {
 			@extend .font-step-6;
 			display: inline-block;
-			position: relative;
-			margin-left: 2rem;
+			margin-top: 2rem;
 		}
 	}
 }
@@ -499,7 +516,7 @@ header {
 footer#contact {
 	background: $black;
 	padding: 5rem 0;
-	margin: 8rem 0 0;
+	margin: 4rem 0 0;
 	position: relative;
 	z-index: 1;
 	.row {
@@ -553,4 +570,46 @@ footer#contact {
 
 .row#tldr-2 {
 	margin-top: 4rem;
+}
+
+@media only screen and (min-width: 62em) {
+	nav.menu {
+		display: block;
+		width: auto;
+		background: none;
+		text-align: right;
+
+		position: fixed;
+		top: 2rem;
+		right: 2rem;
+		a {
+			color: $grey;
+		}
+	}
+	.menu-toggle {
+		display: none;
+	}
+	header#masthead {
+		max-width: 100%;
+		text-align: center;
+		margin-top: 2rem;
+	}
+	header#inside {
+		h1 {
+			margin-top: 2rem;
+			margin-left: 2rem;
+		}
+	}
+	a.button {
+		padding: 2rem 4rem;
+		margin-bottom: 0;
+	}
+
+	.row {
+		margin: 8em auto;
+	}
+
+	footer#contact {
+		margin: 8rem 0 0;
+	}
 }
