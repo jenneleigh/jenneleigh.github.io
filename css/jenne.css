@@ -179,7 +179,7 @@ a.button {
   background-color: #000;
   border: 2px solid #fff;
   padding: 1.5rem 3rem;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
   position: relative;
 }
 
@@ -367,7 +367,7 @@ img {
 #about aside, #case-study #details,
 #case-study #conclusions .text-wrap {
   background: #fff;
-  padding: 4rem 4rem 3rem;
+  padding: 2rem 2rem 1.5rem;
   border: 2px solid #4d4d4d;
   position: relative;
 }
@@ -397,6 +397,13 @@ img {
   border: 2px solid #d9116b;
 }
 
+@media only screen and (min-width: 62em) {
+  #about aside, #case-study #details,
+  #case-study #conclusions .text-wrap {
+    padding: 4rem 4rem 3rem;
+  }
+}
+
 html,
 body {
   font-size: 16px;
@@ -421,12 +428,12 @@ header#masthead h1 {
 }
 
 header#masthead h3 {
-  margin: 1.5rem 0 0 3rem;
+  margin: 1.5rem 0 0 0;
 }
 
 header#inside {
   max-width: 100%;
-  margin-top: 0;
+  margin: 0 auto 2rem;
 }
 
 header#inside h1 {
@@ -502,8 +509,8 @@ header#inside h1 {
 
 footer#contact {
   background: #000;
-  padding: 5rem 0;
-  margin: 4rem 0 0;
+  padding: 3rem 0;
+  margin: 2rem 0 0;
   position: relative;
   z-index: 1;
 }
@@ -519,15 +526,20 @@ footer#contact .row {
 
 #about aside {
   padding: 1rem;
+  margin-bottom: 3rem;
 }
 
 #case-study {
-  margin: 4rem auto 1rem;
+  margin: 2rem auto 1rem;
 }
 
 #case-study .row {
   max-width: 80em;
-  margin: 0 auto 4rem;
+  margin: 0 auto 2rem;
+}
+
+#case-study #details {
+  margin-top: 2rem;
 }
 
 #case-study h3 {
@@ -577,19 +589,35 @@ footer#contact .row {
     text-align: center;
     margin-top: 2rem;
   }
+  header#masthead h3 {
+    margin-left: 3rem;
+  }
   header#inside h1 {
     margin-top: 2rem;
     margin-left: 2rem;
   }
   a.button {
     padding: 2rem 4rem;
-    margin-bottom: 0;
+    margin: 0 auto;
   }
   .row {
     margin: 8em auto;
   }
+  #case-study {
+    margin: 6rem auto 1rem;
+  }
+  #case-study .row {
+    margin: 0 auto 4rem;
+  }
+  #case-study #details {
+    margin-top: 0;
+  }
   footer#contact {
     margin: 8rem 0 0;
+    padding: 5rem 0;
+  }
+  #about aside {
+    margin-bottom: 0;
   }
 }
 /*# sourceMappingURL=jenne.css.map */

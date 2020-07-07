@@ -208,7 +208,7 @@ a.button {
 	background-color: $black;
 	border: 2px solid $white;
 	padding: 1.5rem 3rem;
-	margin-bottom: 2rem;
+	margin: 2rem 0;
 	position: relative;
 	@extend %animation;
 	&::before,
@@ -381,7 +381,7 @@ img {
 
 %threeD-box {
 	background: $white;
-	padding: 4rem 4rem 3rem;
+	padding: 2rem 2rem 1.5rem;
 	border: 2px solid $grey;
 	position: relative;
 	&::before,
@@ -402,6 +402,12 @@ img {
 		right: -1rem;
 		bottom: -1rem;
 		border: 2px solid $pink;
+	}
+}
+
+@media only screen and (min-width: 62em) {
+	%threeD-box {
+		padding: 4rem 4rem 3rem;
 	}
 }
 
@@ -429,12 +435,12 @@ header {
 		}
 		h3 {
 			@extend .font-step-3;
-			margin: 1.5rem 0 0 3rem;
+			margin: 1.5rem 0 0 0;
 		}
 	}
 	&#inside {
 		max-width: 100%;
-		margin-top: 0;
+		margin: 0 auto 2rem;
 		h1 {
 			@extend .font-step-6;
 			display: inline-block;
@@ -515,8 +521,8 @@ header {
 
 footer#contact {
 	background: $black;
-	padding: 5rem 0;
-	margin: 4rem 0 0;
+	padding: 3rem 0;
+	margin: 2rem 0 0;
 	position: relative;
 	z-index: 1;
 	.row {
@@ -532,18 +538,22 @@ footer#contact {
 	aside {
 		@extend %threeD-box;
 		padding: 1rem;
+		margin-bottom: 3rem;
 	}
 }
 
 #case-study {
-	margin: 4rem auto 1rem;
+	margin: 2rem auto 1rem;
 	.row {
 		max-width: 80em;
-		margin: 0 auto 4rem;
+		margin: 0 auto 2rem;
 	}
 	#details,
 	#conclusions .text-wrap {
 		@extend %threeD-box;
+	}
+	#details {
+		margin-top: 2rem;
 	}
 	h3 {
 		@extend .font-step-1;
@@ -593,6 +603,9 @@ footer#contact {
 		max-width: 100%;
 		text-align: center;
 		margin-top: 2rem;
+		h3 {
+			margin-left: 3rem;
+		}
 	}
 	header#inside {
 		h1 {
@@ -602,14 +615,30 @@ footer#contact {
 	}
 	a.button {
 		padding: 2rem 4rem;
-		margin-bottom: 0;
+		margin: 0 auto;
 	}
 
 	.row {
 		margin: 8em auto;
 	}
 
+	#case-study {
+		margin: 6rem auto 1rem;
+		.row {
+			margin: 0 auto 4rem;
+		}
+		#details {
+			margin-top: 0;
+		}
+	}
 	footer#contact {
 		margin: 8rem 0 0;
+		padding: 5rem 0;
+	}
+
+	#about {
+		aside {
+			margin-bottom: 0;
+		}
 	}
 }
