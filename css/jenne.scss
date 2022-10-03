@@ -198,6 +198,46 @@ a {
 	}
 }
 
+input {
+    display: inline-block;
+	border: 2px solid $black;
+	@extend %serif-font;
+	font-size: var(--step-0);
+	color: $black;
+	text-align: center;
+	background-color: $white;
+	border: 2px solid $black;
+	padding: 1rem;
+	margin: 1rem 0;
+	position: relative;
+}
+
+button {
+    display: inline-block;
+	@extend %sans-serif-font;
+	font-size: var(--step-0);
+	font-weight: 700;
+	color: $white;
+	text-align: center;
+	background-color: $black;
+	border: 2px solid $black;
+	padding: 1rem;
+	margin: 1rem 0;
+	position: relative;
+    @extend %animation;
+
+    &:hover,
+	&:focus,
+	&:active {
+		color: $purple;
+		background: $white;
+		border-color: $black;
+	}
+	&:active {
+		color: $purple;
+	}
+}
+
 a.button {
 	display: inline-block;
 	@extend .font-step-2;
@@ -612,10 +652,15 @@ footer#contact {
 			margin-left: 2rem;
 		}
 	}
-	a.button {
+	a.button, button {
 		padding: 2rem 4rem;
 		margin: 0 auto;
 	}
+
+    input, button {
+        padding: 1rem 2rem;
+		margin: 0 auto;
+    }
 
 	.row {
 		margin: 8em auto;
