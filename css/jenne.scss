@@ -388,7 +388,7 @@ img {
 		@extend %animation;
 	}
 	picture.img-green,
-	picture.img-pink {
+	picture.img-purple {
 		position: absolute;
 		z-index: -1;
 		left: 0;
@@ -400,7 +400,7 @@ img {
 		transform: translate(-1rem, -1rem);
 	}
 
-	picture.img-pink {
+	picture.img-purple {
 		transform: translate(1rem, 1rem);
 	}
 	&:hover,
@@ -413,7 +413,7 @@ img {
 			transform: translate(0, 0);
 		}
 
-		picture.img-pink {
+		picture.img-purple {
 			transform: translate(0, 0);
 		}
 	}
@@ -457,12 +457,19 @@ html,
 body {
 	@extend %serif-font;
 	font-size: 16px;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
 }
 
 header {
 	max-width: 80em;
 	margin: 2em auto;
 	position: relative;
+    flex-shrink: 0;
 	&#masthead {
 		max-width: 100%;
 		text-align: center;
@@ -489,9 +496,13 @@ header {
 	}
 }
 
+main {
+    flex: 1 0 auto;
+}
+
 #portfolio {
 	max-width: 80em;
-	margin: 2em auto 8rem;
+	margin: 2em auto 2rem;
 }
 
 .case-study {
@@ -499,10 +510,10 @@ header {
 	a {
 		h3 {
 			@extend .font-step-4;
-			margin-left: -8.333%;
 		}
 		p.font-step-2 {
-			margin: 1rem 0;
+			margin: 0.5rem 0 1rem;
+            font-style: italic;
 		}
 		p.read-more {
 			font-weight: 600;
@@ -621,6 +632,12 @@ footer#contact {
 	margin-top: 4rem;
 }
 
+
+
+header.row, footer {
+    flex-shrink: 0;
+}
+
 @media only screen and (min-width: 62em) {
 	nav.menu {
 		display: block;
@@ -641,7 +658,7 @@ footer#contact {
 	header#masthead {
 		max-width: 100%;
 		text-align: center;
-		margin-top: 2rem;
+		margin: 2rem auto;
 		h3 {
 			margin-left: 3rem;
 		}
@@ -663,11 +680,11 @@ footer#contact {
     }
 
 	.row {
-		margin: 8em auto;
+		margin: 6em auto;
 	}
 
 	#case-study {
-		margin: 6rem auto 1rem;
+		margin: 6rem auto 2rem;
 		.row {
 			margin: 0 auto 4rem;
 		}
@@ -676,7 +693,7 @@ footer#contact {
 		}
 	}
 	footer#contact {
-		margin: 8rem 0 0;
+		margin: 2rem 0 0;
 		padding: 5rem 0;
 	}
 

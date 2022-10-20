@@ -150,7 +150,7 @@ h1 {
 }
 
 button, a.button, a.button::before, a.button::after, .threeD-img picture.img-grey, .threeD-img picture.img-green,
-.threeD-img picture.img-pink {
+.threeD-img picture.img-purple {
   transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
@@ -367,7 +367,7 @@ img {
 }
 
 .threeD-img picture.img-green,
-.threeD-img picture.img-pink {
+.threeD-img picture.img-purple {
   position: absolute;
   z-index: -1;
   left: 0;
@@ -380,7 +380,7 @@ img {
           transform: translate(-1rem, -1rem);
 }
 
-.threeD-img picture.img-pink {
+.threeD-img picture.img-purple {
   -webkit-transform: translate(1rem, 1rem);
           transform: translate(1rem, 1rem);
 }
@@ -395,7 +395,7 @@ img {
           transform: translate(0, 0);
 }
 
-.threeD-img:hover picture.img-pink, .threeD-img:focus picture.img-pink, .threeD-img:active picture.img-pink {
+.threeD-img:hover picture.img-purple, .threeD-img:focus picture.img-purple, .threeD-img:active picture.img-purple {
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
 }
@@ -443,12 +443,25 @@ img {
 html,
 body {
   font-size: 16px;
+  height: 100%;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 header {
   max-width: 80em;
   margin: 2em auto;
   position: relative;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 header#masthead {
@@ -477,21 +490,24 @@ header#inside h1 {
   margin-top: 2rem;
 }
 
+main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
 #portfolio {
   max-width: 80em;
-  margin: 2em auto 8rem;
+  margin: 2em auto 2rem;
 }
 
 .case-study {
   margin-bottom: 8rem;
 }
 
-.case-study a h3 {
-  margin-left: -8.333%;
-}
-
 .case-study a p.font-step-2, .case-study a p.social-icons {
-  margin: 1rem 0;
+  margin: 0.5rem 0 1rem;
+  font-style: italic;
 }
 
 .case-study a p.read-more {
@@ -606,6 +622,11 @@ footer#contact .row {
   margin-top: 4rem;
 }
 
+header.row, footer {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
 @media only screen and (min-width: 62em) {
   nav.menu {
     display: block;
@@ -625,7 +646,7 @@ footer#contact .row {
   header#masthead {
     max-width: 100%;
     text-align: center;
-    margin-top: 2rem;
+    margin: 2rem auto;
   }
   header#masthead h3 {
     margin-left: 3rem;
@@ -643,10 +664,10 @@ footer#contact .row {
     margin: 0 auto;
   }
   .row {
-    margin: 8em auto;
+    margin: 6em auto;
   }
   #case-study {
-    margin: 6rem auto 1rem;
+    margin: 6rem auto 2rem;
   }
   #case-study .row {
     margin: 0 auto 4rem;
@@ -655,7 +676,7 @@ footer#contact .row {
     margin-top: 0;
   }
   footer#contact {
-    margin: 8rem 0 0;
+    margin: 2rem 0 0;
     padding: 5rem 0;
   }
   #about aside {
