@@ -48,10 +48,9 @@
 
 		<main id="case-study">
 			<section class="row" id="title">
-				<h1>Figma Thumbnails</h1>
 				<picture>
-					<source srcset="../img/index/XYZ.jpg 1x, ../img/index/XYZ@2x.jpg 2x" />
-					<img src="../img/index/XYZ.jpg" alt="XYZ" class="img-fluid" />
+					<source srcset="../img/thumbnail/thumbnail-header.jpg 1x, ../img/thumbnail/thumbnail-header@2x.jpg 2x" />
+					<img src="../img/thumbnail/thumbnail-header.jpg" alt="The thumbnails in use" class="img-fluid" />
 				</picture>
 			</section>
 			<section class="row middle-sm" id="tldr">
@@ -70,49 +69,97 @@
 					</p>
 				</div>
 				<div class="col-xs-6 col-sm-6 col-sm-offset-1">
-					<p class="font-medium">
-						A quick refresh of the design team's Figma thumbnail design
-					</p>
+					<h1>Figma Thumbnails</h1>
+
+					<p class="font-medium">A quick refresh of the design team's Figma thumbnail design</p>
 				</div>
 			</section>
 			<section class="row image">
 				<picture>
-					<source srcset="../img/index/XYZ.jpg 1x, ../img/index/XYZ@2x.jpg 2x" />
-					<img src="../img/index/XYZ.jpg" alt="XYZ" class="img-fluid" />
+					<source srcset="../img/thumbnail/thumbnail-before.jpg 1x, ../img/thumbnail/thumbnail-before@2x.jpg 2x" />
+					<img src="../img/thumbnail/thumbnail-before.jpg" alt="The sorry state of our Figma projects before I kicked this project off" class="img-fluid" />
 				</picture>
 			</section>
 			<section class="row text">
 				<div class="col-xs-12 col-sm-8 col-sm-offset-2 text-wrap">
-					<h3>Goals</h3>
+					<h3>Background</h3>
+					<p>Before I joined Figma, one of our designers has put together a template file with a default thumbnail. It worked fine, but had a lot of friction. So much so that the other designers rarely used it.</p>
+					<p>One day, I got tired of not being able to easily find the file I was looking for and decided I was going take a little time and work up a new thumbnail.</p>
+				</div>
+			</section>
+			<section class="row text">
+				<div class="col-xs-12 col-sm-8 col-sm-offset-2 text-wrap">
+					<h3>Analysis</h3>
 					<ul>
-						<li>Grab pompom in mouth</li>
-						<li>Grab pompom in mouth</li>
+						<li>The current thumbnail used color to help indicate file status, but rarely did anyone remember to update it as the project progressed</li>
+						<li>Layout often got cut off in Figma's UI</li>
+						<li>The design was too monotonous, making it hard to pick out files at a glance</li>
 					</ul>
 				</div>
 			</section>
+			<section class="row text middle-sm">
+				<div class="col-xs-12 col-sm-4 col-sm-offset-1 text-wrap">
+					<h3>Research</h3>
+					<p>I spoke with some designers aquaintances at other companies and had them share what they liked and disliked about their org's thumbnails</p>
+					<p>I identified some common patterns among those who liked their thumbnails, most notably being the bold visuals.</p>
+					<p>From their, I pinpointed some file data that would be useful to have at a glance</p>
+					<ul>
+						<li>A file name and a subtitle</li>
+						<li>Who owned the file</li>
+						<li>What pod the file applied to</li>
+					</ul>
+					<p>I briefly considered including file status but decided that, knowing it would rarely get updated, it was better to save space for the other details.</p>
+					<p>I also decided to use Unsplash for the visual element. With a large free library, it would be easy to find a fun distinguishing image without having to use up our limited design resources.</p>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<picture>
+						<source srcset="../img/thumbnail/thumbnail-research.jpg 1x, ../img/thumbnail/thumbnail-research@2x.jpg 2x" />
+						<img src="../img/thumbnail/thumbnail-research.jpg" alt="Some example thumbnails from my peers" class="img-fluid" />
+					</picture>
+				</div>
+			</section>
+
 			<section class="row image">
 				<picture>
-					<source srcset="../img/index/XYZ.jpg 1x, ../img/index/XYZ@2x.jpg 2x" />
-					<img src="../img/index/XYZ.jpg" alt="XYZ" class="img-fluid" />
+					<source srcset="../img/thumbnail/thumbnail-experiments.jpg 1x, ../img/thumbnail/thumbnail-experiments@2x.jpg 2x" />
+					<img src="../img/thumbnail/thumbnail-experiments.jpg" alt="My design explorations" class="img-fluid" />
 				</picture>
 			</section>
 			<section class="row text">
 				<div class="col-xs-12 col-sm-8 col-sm-offset-2 text-wrap">
-					<h3>Designs</h3>
-					<p>
-						Grab
-					</p>
+					<h3>The Design</h3>
+					<p>I tried a few experiments, eventually landed on the basic design you see above.</p>
+					<p>I took design to our weekly crit session and got a positive response from team. The ability to use the photo as a visual pun was a big hit!</p>
+					<p>For file owner pill, I had every member of my team pick their favorite color, to add just a little extra personality.</p>
 				</div>
 			</section>
+
+			<section class="row image">
+				<picture>
+					<source srcset="../img/thumbnail/thumbnail-component.jpg 1x, ../img/thumbnail/thumbnail-component@2x.jpg 2x" />
+					<img src="../img/thumbnail/thumbnail-component.jpg" alt="The final design and it's component variables" class="img-fluid" />
+				</picture>
+			</section>
+			<section class="row text">
+				<div class="col-xs-12 col-sm-8 col-sm-offset-2 text-wrap">
+					<h3>The Component</h3>
+					<p>I took that feedback and made a few design changes and then turned the whole thing into a single Figma component, with lots of props to make it an absolute breeze to use.</p>
+				</div>
+			</section>
+
+			<section class="row image">
+				<picture>
+					<source srcset="../img/thumbnail/thumbnail-after.jpg 1x, ../img/thumbnail/thumbnail-after@2x.jpg 2x" />
+					<img src="../img/thumbnail/thumbnail-after.jpg" alt="The final thumbnail design in situ" class="img-fluid" />
+				</picture>
+			</section>
+
 			<section id="conclusions">
 				<div class="row">
 					<div class="col-xs-12 col-sm-8 col-sm-offset-2 text-wrap">
 						<h3>Conclusions</h3>
-						<p>
-							Grab pompom in mouth and put in water dish love and coo around boyfriend who purrs and makes the perfect moonlight eyes so i can purr and swat the glittery gleaming yarn to him (the yarn is from a $125 sweater)
-							yet tuxedo cats always looking dapper and drink water out of
-						</p>
-					</div>
+						<p>The new thumbnails met my primary goal immediately. I spend was less time hunting around Figma, trying to find the file I'm looking for Plus, I get to make dumbs puns, which is always a bonus!</p>
+                        <p>A pretty solid outcome for what ended up being less than a half-days works.</p>
 				</div>
 			</section>
 		</main>
@@ -140,7 +187,6 @@
 			window.jQuery || document.write('<script src="../js/vendor/jquery-3.4.1.min.js"><\/script>');
 		</script>
 		<script src="../js/plugins.js"></script>
-		
 
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162070089-1"></script>
