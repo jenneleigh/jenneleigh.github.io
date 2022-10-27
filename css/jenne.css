@@ -68,18 +68,18 @@
 .font-step-0, nav.menu, .jump-links,
 p,
 ul,
-ol, .font-step-1, #case-study h3, #case-study h4, .font-step-2, a.button, .social-icons, .font-step-3, header#masthead h3, input, html,
+ol, .font-step-1, #case-study h3, #case-study h4, .font-step-2, a.button, .social-icons, .font-step-3, input, html,
 body {
   font-family: "Crimson Pro", serif;
   font-weight: 300;
   color: #4d4d4d;
 }
 
-.font-step-0 strong, nav.menu strong, .jump-links strong, p strong, ul strong, ol strong, .font-step-1 strong, #case-study h3 strong, #case-study h4 strong, .font-step-2 strong, a.button strong, .social-icons strong, .font-step-3 strong, header#masthead h3 strong, input strong, html strong, body strong {
+.font-step-0 strong, nav.menu strong, .jump-links strong, p strong, ul strong, ol strong, .font-step-1 strong, #case-study h3 strong, #case-study h4 strong, .font-step-2 strong, a.button strong, .social-icons strong, .font-step-3 strong, input strong, html strong, body strong {
   font-weight: 600;
 }
 
-.font-step-4, h1, .case-study a h3, .font-step-5, .font-step-6, header#inside h1, .font-step-8, header#masthead h1, button, a.button {
+.font-step-4, h1, .case-study a h3, .font-step-5, .font-step-6, header#inside h1, .font-step-8, button, a.button {
   font-family: "Montserrat Alternates", sans-serif;
   font-weight: 800;
   color: #000;
@@ -110,7 +110,7 @@ ul {
   margin: 0;
 }
 
-.font-step-3, header#masthead h3 {
+.font-step-3 {
   font-size: var(--step-3);
   line-height: 1em;
   margin: 0;
@@ -138,7 +138,7 @@ ul {
   text-transform: lowercase;
 }
 
-.font-step-8, header#masthead h1 {
+.font-step-8 {
   font-size: var(--step-8);
   line-height: 1em;
   margin: 0;
@@ -157,7 +157,7 @@ button, a.button, a.button::before, a.button::after, .threeD-img picture.img-gre
 }
 
 a {
-  color: #5D21D0;
+  color: #5d21d0;
   text-decoration: none;
   font-weight: 600;
 }
@@ -168,7 +168,7 @@ a:hover, a:focus {
 }
 
 a:active, a.active {
-  color: #5D21D0;
+  color: #5d21d0;
 }
 
 input {
@@ -198,13 +198,13 @@ button {
 }
 
 button:hover, button:focus, button:active {
-  color: #5D21D0;
+  color: #5d21d0;
   background: #fff;
   border-color: #000;
 }
 
 button:active {
-  color: #5D21D0;
+  color: #5d21d0;
 }
 
 a.button {
@@ -224,7 +224,7 @@ a.button::before, a.button::after {
   content: "";
   width: 100%;
   height: 100%;
-  border: 2px solid #5D21D0;
+  border: 2px solid #5d21d0;
   position: absolute;
   z-index: -1;
   left: 0;
@@ -234,7 +234,7 @@ a.button::before, a.button::after {
 }
 
 a.button::before {
-  border-color: #01F9C6;
+  border-color: #01f9c6;
   -webkit-transform: translate(calc(-0.5rem - 2px), calc(-0.5rem - 2px));
           transform: translate(calc(-0.5rem - 2px), calc(-0.5rem - 2px));
 }
@@ -245,7 +245,7 @@ a.button::after {
 }
 
 a.button:hover, a.button:focus, a.button:active {
-  color: #5D21D0;
+  color: #5d21d0;
   background: #fff;
   border-color: #000;
 }
@@ -256,13 +256,13 @@ a.button:hover::before, a.button:hover::after, a.button:focus::before, a.button:
 }
 
 a.button:active {
-  color: #5D21D0;
+  color: #5d21d0;
 }
 
 nav.menu {
   font-family: "Montserrat Alternates", sans-serif;
   list-style: none;
-  margin: 0 0 2rem;
+  margin: -2rem 0 2rem;
   padding: 0;
   text-align: center;
   background: #000;
@@ -280,12 +280,12 @@ nav.menu a {
 }
 
 nav.menu a:hover, nav.menu a:focus {
-  color: #5D21D0;
-  border-bottom: 1px solid #5D21D0;
+  color: #01f9c6;
+  border-bottom: 2px solid #5d21d0;
 }
 
 nav.menu a:active, nav.menu a.active {
-  color: #5D21D0;
+  color: #01f9c6;
 }
 
 nav.menu a.active {
@@ -347,13 +347,13 @@ img {
 .threeD-type:before {
   left: -0.075em;
   top: -0.075em;
-  -webkit-text-stroke-color: #01F9C6;
+  -webkit-text-stroke-color: #01f9c6;
 }
 
 .threeD-type:after {
   right: -0.075em;
   bottom: -0.075em;
-  -webkit-text-stroke-color: #5D21D0;
+  -webkit-text-stroke-color: #5d21d0;
 }
 
 .threeD-img {
@@ -423,14 +423,14 @@ img {
 #case-study #conclusions .text-wrap::before {
   left: -1rem;
   top: -1rem;
-  border: 2px solid #01F9C6;
+  border: 2px solid #01f9c6;
 }
 
 #about aside::after, #case-study #details::after,
 #case-study #conclusions .text-wrap::after {
   right: -1rem;
   bottom: -1rem;
-  border: 2px solid #5D21D0;
+  border: 2px solid #5d21d0;
 }
 
 @media only screen and (min-width: 62em) {
@@ -464,30 +464,13 @@ header {
       flex-shrink: 0;
 }
 
-header#masthead {
-  max-width: 100%;
-  text-align: center;
-  margin-top: 0;
-}
-
-header#masthead h1 {
-  display: inline-block;
-  position: relative;
-  margin-top: 2rem;
-}
-
-header#masthead h3 {
-  margin: 1.5rem 0 0 0;
-}
-
 header#inside {
-  max-width: 100%;
-  margin: 0 auto 2rem;
+  width: 100%;
+  margin: 2rem auto 0;
 }
 
 header#inside h1 {
   display: inline-block;
-  margin-top: 2rem;
 }
 
 main {
@@ -503,6 +486,10 @@ main {
 
 .case-study {
   margin-bottom: 8rem;
+}
+
+.case-study a h3 {
+  font-size: var(--step-3);
 }
 
 .case-study a p.font-step-2, .case-study a p.social-icons {
@@ -524,7 +511,7 @@ main {
 }
 
 .case-study a:hover p.read-more, .case-study a:focus p.read-more, .case-study a:active p.read-more {
-  color: #5D21D0;
+  color: #5d21d0;
 }
 
 .social-icons {
@@ -535,7 +522,7 @@ main {
 .social-icons a {
   display: inline-block;
   padding: 0 1rem;
-  color: #01F9C6;
+  color: #01f9c6;
 }
 
 .social-icons a:hover, .social-icons a:focus, .social-icons a:active {
@@ -553,7 +540,7 @@ main {
 .jump-links a {
   display: inline-block;
   padding: 0 1rem;
-  color: #01F9C6;
+  color: #01f9c6;
 }
 
 .jump-links a:hover, .jump-links a:focus, .jump-links a:active {
@@ -618,11 +605,8 @@ footer#contact .row {
   margin: 0 auto 2rem;
 }
 
-.row#tldr-2 {
-  margin-top: 4rem;
-}
-
-header.row, footer {
+header.row,
+footer {
   -ms-flex-negative: 0;
       flex-shrink: 0;
 }
@@ -633,12 +617,22 @@ header.row, footer {
     width: auto;
     background: none;
     text-align: right;
+    margin: 0;
     position: fixed;
     top: 2rem;
     right: 2rem;
   }
   nav.menu a {
     color: #4d4d4d;
+  }
+  nav.menu a:hover, nav.menu a:focus {
+    color: #5d21d0;
+  }
+  nav.menu a:active, nav.menu a.active {
+    color: #5d21d0;
+  }
+  nav.menu a.active {
+    cursor: default;
   }
   .menu-toggle {
     display: none;
@@ -651,23 +645,30 @@ header.row, footer {
   header#masthead h3 {
     margin-left: 3rem;
   }
+  header#inside {
+    margin: 2rem auto;
+  }
   header#inside h1 {
     margin-top: 2rem;
-    margin-left: 2rem;
   }
-  a.button, button {
+  a.button,
+  button {
     padding: 2rem 4rem;
     margin: 0 auto;
   }
-  input, button {
+  input,
+  button {
     padding: 1rem 2rem;
     margin: 0 auto;
   }
   .row {
     margin: 6em auto;
   }
+  .case-study h3 {
+    font-size: var(--step-4);
+  }
   #case-study {
-    margin: 6rem auto 2rem;
+    margin: 2rem auto 2rem;
   }
   #case-study .row {
     margin: 0 auto 4rem;

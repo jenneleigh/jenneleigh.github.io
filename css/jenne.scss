@@ -2,8 +2,8 @@ $black: #000;
 $white: #fff;
 $grey: #4d4d4d;
 $grey-100: #d2d2d2;
-$green: #01F9C6;
-$purple: #5D21D0;
+$green: #01f9c6;
+$purple: #5d21d0;
 
 :root {
 	--fluid-min-width: 450;
@@ -199,7 +199,7 @@ a {
 }
 
 input {
-    display: inline-block;
+	display: inline-block;
 	border: 2px solid $black;
 	@extend %serif-font;
 	font-size: var(--step-0);
@@ -213,7 +213,7 @@ input {
 }
 
 button {
-    display: inline-block;
+	display: inline-block;
 	@extend %sans-serif-font;
 	font-size: var(--step-0);
 	font-weight: 700;
@@ -224,9 +224,9 @@ button {
 	padding: 1rem;
 	margin: 1rem 0;
 	position: relative;
-    @extend %animation;
+	@extend %animation;
 
-    &:hover,
+	&:hover,
 	&:focus,
 	&:active {
 		color: $purple;
@@ -292,7 +292,7 @@ nav.menu {
 	@extend .font-step-0;
 	font-family: $sans-serif;
 	list-style: none;
-	margin: 0 0 2rem;
+	margin: -2rem 0 2rem;
 	padding: 0;
 	text-align: center;
 	background: $black;
@@ -306,12 +306,12 @@ nav.menu {
 		font-weight: 500;
 		&:hover,
 		&:focus {
-			color: $purple;
-			border-bottom: 1px solid $purple;
+			color: $green;
+			border-bottom: 2px solid $purple;
 		}
 		&:active,
 		&.active {
-			color: $purple;
+			color: $green;
 		}
 		&.active {
 			cursor: default;
@@ -457,47 +457,46 @@ html,
 body {
 	@extend %serif-font;
 	font-size: 16px;
-    height: 100%;
+	height: 100%;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 header {
 	max-width: 80em;
 	margin: 2em auto;
 	position: relative;
-    flex-shrink: 0;
-	&#masthead {
-		max-width: 100%;
-		text-align: center;
-		margin-top: 0;
-		h1 {
-			@extend .font-step-8;
-			display: inline-block;
-			position: relative;
-			margin-top: 2rem;
-		}
-		h3 {
-			@extend .font-step-3;
-			margin: 1.5rem 0 0 0;
-		}
-	}
+	flex-shrink: 0;
+	// &#masthead {
+	// 	max-width: 100%;
+	// 	text-align: center;
+	// 	margin-top: 0;
+	// 	h1 {
+	// 		@extend .font-step-8;
+	// 		display: inline-block;
+	// 		position: relative;
+	// 		margin-top: 2rem;
+	// 	}
+	// 	h3 {
+	// 		@extend .font-step-3;
+	// 		margin: 1.5rem 0 0 0;
+	// 	}
+	// }
 	&#inside {
-		max-width: 100%;
-		margin: 0 auto 2rem;
+		width: 100%;
+		margin: 2rem auto 0;
 		h1 {
 			@extend .font-step-6;
 			display: inline-block;
-			margin-top: 2rem;
 		}
 	}
 }
 
 main {
-    flex: 1 0 auto;
+	flex: 1 0 auto;
 }
 
 #portfolio {
@@ -510,10 +509,11 @@ main {
 	a {
 		h3 {
 			@extend .font-step-4;
+			font-size: var(--step-3);
 		}
 		p.font-step-2 {
 			margin: 0.5rem 0 1rem;
-            font-style: italic;
+			font-style: italic;
 		}
 		p.read-more {
 			font-weight: 600;
@@ -540,7 +540,7 @@ main {
 	a {
 		display: inline-block;
 		padding: 0 1rem;
-        color: $green;
+		color: $green;
 		&:hover,
 		&:focus,
 		&:active {
@@ -559,7 +559,7 @@ main {
 	a {
 		display: inline-block;
 		padding: 0 1rem;
-        color: $green;
+		color: $green;
 		&:hover,
 		&:focus,
 		&:active {
@@ -628,14 +628,9 @@ footer#contact {
 	}
 }
 
-.row#tldr-2 {
-	margin-top: 4rem;
-}
-
-
-
-header.row, footer {
-    flex-shrink: 0;
+header.row,
+footer {
+	flex-shrink: 0;
 }
 
 @media only screen and (min-width: 62em) {
@@ -645,11 +640,24 @@ header.row, footer {
 		background: none;
 		text-align: right;
 
+		margin: 0;
+
 		position: fixed;
 		top: 2rem;
 		right: 2rem;
 		a {
 			color: $grey;
+			&:hover,
+			&:focus {
+				color: $purple;
+			}
+			&:active,
+			&.active {
+				color: $purple;
+			}
+			&.active {
+				cursor: default;
+			}
 		}
 	}
 	.menu-toggle {
@@ -664,27 +672,35 @@ header.row, footer {
 		}
 	}
 	header#inside {
+		margin: 2rem auto;
 		h1 {
 			margin-top: 2rem;
-			margin-left: 2rem;
 		}
 	}
-	a.button, button {
+	a.button,
+	button {
 		padding: 2rem 4rem;
 		margin: 0 auto;
 	}
 
-    input, button {
-        padding: 1rem 2rem;
+	input,
+	button {
+		padding: 1rem 2rem;
 		margin: 0 auto;
-    }
+	}
 
 	.row {
 		margin: 6em auto;
 	}
 
+	.case-study {
+		h3 {
+			font-size: var(--step-4);
+		}
+	}
+
 	#case-study {
-		margin: 6rem auto 2rem;
+		margin: 2rem auto 2rem;
 		.row {
 			margin: 0 auto 4rem;
 		}
