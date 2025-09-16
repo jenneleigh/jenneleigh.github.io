@@ -1,8 +1,8 @@
 :root {
   --fluid-min-width: 450;
   --fluid-max-width: 1440;
-  --fluid-min-size: 18;
-  --fluid-max-size: 18;
+  --fluid-min-size: 16;
+  --fluid-max-size: 16;
   --fluid-min-ratio: 1.125;
   --fluid-max-ratio: 1.25;
   --fluid-screen: 100vw;
@@ -68,30 +68,44 @@
   --step-8: calc(((var(--fluid-min-size-8) * 1rem) + (var(--fluid-max-size-8) - var(--fluid-min-size-8)) * var(--fluid-bp)));
 }
 
+@font-face {
+  font-family: "Satoshi";
+  src: url("../fonts/Satoshi-Variable.woff2") format("woff2"), url("../fonts/Satoshi-Variable.woff") format("woff"), url("../fonts/Satoshi-Variable.ttf") format("truetype");
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url("../fonts/Satoshi-VariableItalic.woff2") format("woff2"), url("../fonts/Satoshi-VariableItalic.woff") format("woff"), url("../fonts/Satoshi-VariableItalic.ttf") format("truetype");
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: italic;
+}
 html,
-body, input, .font-step-3, .font-step-2, .social-icons, a.button, .font-step-1, #case-study h4, #case-study h3, .font-step-0, .jump-links, nav.menu,
+body, input, .font-step-3, #about h2, .font-step-2, .social-icons, a.button, .font-step-1, .font-step-0, .jump-links,
 p,
 ul,
 ol {
-  font-family: "Crimson Pro", serif;
-  font-weight: 300;
+  font-family: "Satoshi", sans-serif;
+  font-weight: 400;
   color: #4d4d4d;
 }
 html strong,
-body strong, input strong, .font-step-3 strong, .font-step-2 strong, .social-icons strong, a.button strong, .font-step-1 strong, #case-study h4 strong, #case-study h3 strong, .font-step-0 strong, .jump-links strong, nav.menu strong,
+body strong, input strong, .font-step-3 strong, #about h2 strong, .font-step-2 strong, .social-icons strong, a.button strong, .font-step-1 strong, .font-step-0 strong, .jump-links strong,
 p strong,
 ul strong,
 ol strong {
-  font-weight: 600;
+  font-weight: 500;
 }
 
-a.button, button, .font-step-8, .font-step-6, header#inside h1, .font-step-5, .font-step-4, #case-study #mini-portfolio h3, .case-study a h3, h1 {
+a.button, button, .font-step-8, .font-step-6, .font-step-5, h1, .font-step-4, h2 {
   font-family: "Montserrat Alternates", sans-serif;
   font-weight: 800;
   color: #000;
 }
 
-.font-step-0, .jump-links, nav.menu,
+.font-step-0, .jump-links,
 p,
 ul,
 ol {
@@ -104,7 +118,7 @@ ul {
   list-style: circle;
 }
 
-.font-step-1, #case-study h4, #case-study h3 {
+.font-step-1 {
   font-size: var(--step-1);
   line-height: 1.25em;
   margin: 0 0 2rem;
@@ -116,28 +130,28 @@ ul {
   margin: 0;
 }
 
-.font-step-3 {
+.font-step-3, #about h2 {
   font-size: var(--step-3);
   line-height: 1em;
   margin: 0;
   text-transform: lowercase;
 }
 
-.font-step-4, #case-study #mini-portfolio h3, .case-study a h3, h1 {
+.font-step-4, h2 {
   font-size: var(--step-4);
   line-height: 1em;
   margin: 0;
   text-transform: lowercase;
 }
 
-.font-step-5 {
+.font-step-5, h1 {
   font-size: var(--step-5);
   line-height: 1em;
   margin: 0;
   text-transform: lowercase;
 }
 
-.font-step-6, header#inside h1 {
+.font-step-6 {
   font-size: var(--step-6);
   line-height: 1em;
   margin: 0;
@@ -155,8 +169,7 @@ h1 {
   margin-bottom: 1rem;
 }
 
-.threeD-img picture.img-green,
-.threeD-img picture.img-purple, .threeD-img picture.img-grey, a.button::before, a.button::after, a.button, button {
+a.button::before, a.button::after, a.button, button {
   transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
@@ -251,50 +264,11 @@ a.button:active {
   color: #5d21d0;
 }
 
-nav.menu {
-  font-family: "Montserrat Alternates", sans-serif;
-  list-style: none;
-  margin: -2rem 0 2rem;
-  padding: 0;
-  text-align: center;
-  background: #000;
-  display: none;
-  width: 100%;
-}
-nav.menu li {
-  padding: 1rem 0;
-}
-nav.menu a {
-  color: #fff;
-  font-weight: 500;
-}
-nav.menu a:hover, nav.menu a:focus {
-  color: #01f9c6;
-  border-bottom: 2px solid #5d21d0;
-}
-nav.menu a:active, nav.menu a.active {
-  color: #01f9c6;
-}
-nav.menu a.active {
-  cursor: default;
-}
-
-.menu-toggle {
-  background: none;
-  color: #4d4d4d;
-  font-weight: 500;
-  text-align: center;
-  padding: 1rem 0;
-}
-.menu-toggle a i.closed {
-  display: none;
-}
-.menu-toggle a:hover, .menu-toggle a:focus, .menu-toggle a:active {
-  border-bottom: none;
-}
-
 .row {
-  margin: 4em auto;
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 4em 0;
+  z-index: 1;
 }
 
 img {
@@ -337,47 +311,13 @@ img {
   -webkit-text-stroke-color: #5d21d0;
 }
 
-.threeD-img {
-  z-index: 1;
-  position: relative;
-}
-.threeD-img picture.img-grey {
-  filter: grayscale(1);
-}
-.threeD-img picture.img-green,
-.threeD-img picture.img-purple {
-  position: absolute;
-  z-index: -1;
-  left: 0;
-  top: 0;
-  padding: inherit;
-}
-.threeD-img picture.img-green {
-  transform: translate(-1rem, -1rem);
-}
-.threeD-img picture.img-purple {
-  transform: translate(1rem, 1rem);
-}
-.threeD-img:hover picture.img-grey, .threeD-img:focus picture.img-grey, .threeD-img:active picture.img-grey {
-  filter: grayscale(0);
-}
-.threeD-img:hover picture.img-green, .threeD-img:focus picture.img-green, .threeD-img:active picture.img-green {
-  transform: translate(0, 0);
-}
-.threeD-img:hover picture.img-purple, .threeD-img:focus picture.img-purple, .threeD-img:active picture.img-purple {
-  transform: translate(0, 0);
-}
-
-#case-study #details,
-#case-study #conclusions .text-wrap, #about aside {
+.threeD-box {
   background: #fff;
-  padding: 2rem 2rem 1.5rem;
+  padding: 1rem;
   border: 2px solid #4d4d4d;
   position: relative;
 }
-#case-study #details::before,
-#case-study #conclusions .text-wrap::before, #about aside::before, #case-study #details::after,
-#case-study #conclusions .text-wrap::after, #about aside::after {
+.threeD-box::before, .threeD-box::after {
   display: block;
   content: "";
   position: absolute;
@@ -385,25 +325,34 @@ img {
   height: 100%;
   z-index: -1;
 }
-#case-study #details::before,
-#case-study #conclusions .text-wrap::before, #about aside::before {
+.threeD-box::before {
   left: -1rem;
   top: -1rem;
   border: 2px solid #01f9c6;
 }
-#case-study #details::after,
-#case-study #conclusions .text-wrap::after, #about aside::after {
+.threeD-box::after {
   right: -1rem;
   bottom: -1rem;
   border: 2px solid #5d21d0;
 }
 
-@media only screen and (min-width: 62em) {
-  #case-study #details,
-  #case-study #conclusions .text-wrap, #about aside {
-    padding: 4rem 4rem 3rem;
-  }
+.inverse {
+  background: #000;
 }
+.inverse html,
+.inverse body, .inverse .font-step-0, .inverse .jump-links,
+.inverse p,
+.inverse ul,
+.inverse ol, .inverse .font-step-1, .inverse .font-step-2, .inverse .social-icons, .inverse .font-step-3, .inverse #about h2, #about .inverse h2, .inverse input, .inverse a.button {
+  color: #e6e6e6;
+}
+.inverse .font-step-4, .inverse .font-step-5, .inverse .font-step-6, .inverse .font-step-8, .inverse h1, .inverse h2, .inverse button, .inverse a.button {
+  color: #fff;
+}
+.inverse a {
+  color: #01f9c6;
+}
+
 html,
 body {
   font-size: 16px;
@@ -415,66 +364,26 @@ body {
   flex-direction: column;
 }
 
-header {
-  max-width: 80em;
-  margin: 2em auto;
-  position: relative;
-  flex-shrink: 0;
-}
-header#inside {
-  width: 100%;
-  margin: 2rem auto 0;
-}
-header#inside h1 {
-  display: inline-block;
-}
-
 main {
   flex: 1 0 auto;
-}
-
-#portfolio,
-#mini-portfolio {
-  max-width: 80em;
-  margin: 2em auto 2rem;
-}
-
-.case-study {
-  margin-bottom: 8rem;
-}
-.case-study a h3 {
-  font-size: var(--step-3);
-}
-.case-study a p.font-step-2, .case-study a p.social-icons {
-  margin: 0.5rem 0 1rem;
-  font-style: italic;
-}
-.case-study a p.read-more {
-  font-weight: 600;
-}
-.case-study a[role=section] {
-  position: relative;
-  z-index: 5;
-}
-.case-study a:hover, .case-study a:focus, .case-study a:active {
-  border-bottom: none;
-}
-.case-study a:hover p.read-more, .case-study a:focus p.read-more, .case-study a:active p.read-more {
-  color: #5d21d0;
+  margin: 0;
 }
 
 .social-icons {
-  text-align: center;
+  text-align: right;
   margin: 0;
 }
 .social-icons a {
   display: inline-block;
-  padding: 0 1rem;
   color: #01f9c6;
+  margin: 0 1rem;
 }
 .social-icons a:hover, .social-icons a:focus, .social-icons a:active {
   border-bottom: none;
   color: #fff;
+}
+.social-icons a:last-of-type {
+  margin-right: 0;
 }
 
 .jump-links {
@@ -500,50 +409,9 @@ footer#contact {
   position: relative;
   z-index: 1;
 }
-footer#contact .row {
-  margin: 0 auto;
-  max-width: 80em;
-}
 
-#about .row {
-  max-width: 80em;
-}
-#about aside {
-  padding: 1rem;
-  margin-bottom: 3rem;
-}
-
-#case-study {
-  margin: 2rem auto 1rem;
-}
-#case-study .row {
-  max-width: 80em;
-  margin: 0 auto 2rem;
-}
-#case-study #details {
-  margin-top: 2rem;
-}
-#case-study h3 {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 700;
-  color: #000;
-  text-transform: lowercase;
+#about h2 {
   margin-bottom: 1rem;
-}
-#case-study h4 {
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-#case-study #mini-portfolio h3 {
-  font-size: var(--step-3);
-}
-
-#case-study-bottom {
-  max-width: 80em;
-  margin: 0 auto;
-}
-#case-study-bottom .row {
-  margin: 0 auto 2rem;
 }
 
 header.row,
@@ -577,20 +445,6 @@ footer {
   .menu-toggle {
     display: none;
   }
-  header#masthead {
-    max-width: 100%;
-    text-align: center;
-    margin: 2rem auto;
-  }
-  header#masthead h3 {
-    margin-left: 3rem;
-  }
-  header#inside {
-    margin: 2rem auto;
-  }
-  header#inside h1 {
-    margin-top: 2rem;
-  }
   a.button,
   button {
     padding: 2rem 4rem;
@@ -600,27 +454,5 @@ footer {
   button {
     padding: 1rem 2rem;
     margin: 0 auto;
-  }
-  .row {
-    margin: 6em auto;
-  }
-  .case-study h3 {
-    font-size: var(--step-4);
-  }
-  #case-study {
-    margin: 2rem auto 2rem;
-  }
-  #case-study .row {
-    margin: 0 auto 4rem;
-  }
-  #case-study #details {
-    margin-top: 0;
-  }
-  footer#contact {
-    margin: 2rem 0 0;
-    padding: 5rem 0;
-  }
-  #about aside {
-    margin-bottom: 0;
   }
 }/*# sourceMappingURL=jenne.css.map */

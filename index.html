@@ -6,11 +6,11 @@
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
 		<link rel="manifest" href="/site.webmanifest" />
-		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0a3d62" />
+		<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#0a3d62" />
 		<meta name="msapplication-TileColor" content="#2b5797" />
 		<meta name="theme-color" content="#ffffff" />
 
@@ -32,36 +32,44 @@
 			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 		<![endif]-->
 		<!-- Add your site or application content here -->
-		<header id="inside" class="row middle-xs">
-			<nav class="col-sm-3 menu" id="top-menu">
-				<li><a href="#" class="active">about</a></li>
-				<li><a href="portfolio.html">work</a></li>
-				<li><a href="#contact">contact</a></li>
-			</nav>
-			<section class="col-xs-10 col-sm-9">
-				<h1 class="threeD-type" title="Jenné Leigh">Jenné Leigh</h1>
-			</section>
-			<div class="col-xs-2 menu-toggle">
-				<a href="#"><i class="fas fa-bars open"></i><i class="far fa-times-circle closed"></i></a>
-			</div>
-		</header>
-
-		<main id="about">
-			<div class="row middle-sm">
-				<aside class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0" id="headshot">
+		<header class="inverse">
+			<section class="row middle-sm" id="about">
+				<figure class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0 threeD-box" id="headshot">
 					<picture>
 						<source srcset="/img/jenne-headshot.jpg 1x, /img/jenne-headshot@2x.jpg 2x" />
 						<img src="/img/jenne-headshot.jpg" alt="Jenné's headshot" class="img-fluid" />
 					</picture>
-				</aside>
-				<section class="col-xs-10 col-xs-offset-1 col-sm-5">
+				</figure>
+
+				<article class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0">
 					<h1>Hi! I'm Jenné</h1>
-					<h2>i'm a former design generalist turned design system specialist</h2>
-					<p>Seriously, I've done it all: Print, web, code, you name it. Though these days most of my time is spent writing documentation and creating Figma components.</p>
-					<p>My portfolio is a WIP right now, but you can <a href="portfolio.html">find it here</a>&hellip;if you have the password.</p>
-					<p>If you don't have the password, <a href="mailto:jenne@jenneleigh.com?subject=Hello" title="let's chat!">let's chat</a> instead.</p>
-				</section>
-			</div>
+					<h2>and I think design systems are pretty cool!</h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur finibus ante sed faucibus elementum. Suspendisse id tellus sapien. Nullam nec finibus nisl. Mauris ut nunc metus. Class aptent taciti sociosqu ad
+						litora torquent per conubia nostra, per inceptos
+					</p>
+					<div class="social-icons">
+						<a href="https://www.instagram.com/jenneleigh/" title="Instagram"><i class="fab fa-instagram"></i></a>
+						<a href="https://dribbble.com/jenne" title="Dribbble"><i class="fab fa-dribbble"></i></a>
+						<a href="https://www.linkedin.com/in/jenneleigh/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+					</div>
+				</article>
+			</section>
+		</header>
+		<main>
+			<section class="row middle-sm" id="phi">
+				<article class="col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0">
+					<h2>Phi</h2>
+					<h3>Sigma's design system</h3>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur finibus ante sed faucibus elementum. Suspendisse id tellus sapien. Nullam nec finibus nisl. Mauris ut nunc metus. Class aptent taciti sociosqu ad
+						litora torquent per conubia nostra, per inceptos himenaeos. Phasellus et pulvinar orci. Nunc semper est ipsum, non condimentum leo feugiat vitae. Etiam sodales mauris arcu, ullamcorper lobortis leo auctor vel. Donec
+						in nibh ullamcorper, accumsan mi ac, convallis turpis. Nunc tempus bibendum odio quis euismod. Donec aliquet mauris non est iaculis, ac aliquam tellus tempor. Integer rhoncus felis tellus, sed vehicula lorem tempor
+						ut.
+					</p>
+					<p><a href="">check out the Figma library here &rarrtl;</a></p>
+				</article>
+			</section>
 		</main>
 
 		<footer id="contact">
@@ -78,24 +86,5 @@
 				</aside>
 			</div>
 		</footer>
-
-		<script src="js/vendor/modernizr-3.8.0.min.js"></script>
-		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-		<script>
-			window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>');
-		</script>
-		<script src="js/plugins.js"></script>
-
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-RSJRT15QPK"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag() {
-				dataLayer.push(arguments);
-			}
-			gtag("js", new Date());
-
-			gtag("config", "G-RSJRT15QPK");
-		</script>
 	</body>
 </html>

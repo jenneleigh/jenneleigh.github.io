@@ -1,15 +1,15 @@
 $black: #000;
 $white: #fff;
 $grey: #4d4d4d;
-$grey-100: #d2d2d2;
+$grey-inverse: #e6e6e6;
 $green: #01f9c6;
 $purple: #5d21d0;
 
 :root {
 	--fluid-min-width: 450;
 	--fluid-max-width: 1440;
-	--fluid-min-size: 18;
-	--fluid-max-size: 18;
+	--fluid-min-size: 16;
+	--fluid-max-size: 16;
 	--fluid-min-ratio: 1.125;
 	--fluid-max-ratio: 1.25;
 
@@ -87,19 +87,35 @@ $purple: #5d21d0;
 	--step-8: calc(((var(--fluid-min-size-8) * 1rem) + (var(--fluid-max-size-8) - var(--fluid-min-size-8)) * var(--fluid-bp)));
 }
 
-$serif: "Crimson Pro", serif;
+@font-face {
+	font-family: "Satoshi";
+	src: url("../fonts/Satoshi-Variable.woff2") format("woff2"), url("../fonts/Satoshi-Variable.woff") format("woff"), url("../fonts/Satoshi-Variable.ttf") format("truetype");
+	font-weight: 300 900;
+	font-display: swap;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Satoshi";
+	src: url("../fonts/Satoshi-VariableItalic.woff2") format("woff2"), url("../fonts/Satoshi-VariableItalic.woff") format("woff"), url("../fonts/Satoshi-VariableItalic.ttf") format("truetype");
+	font-weight: 300 900;
+	font-display: swap;
+	font-style: italic;
+}
+
+$base: "Satoshi", sans-serif;
 $sans-serif: "Montserrat Alternates", sans-serif;
 
-%serif-font {
-	font-family: $serif;
-	font-weight: 300;
+%base-font {
+	font-family: $base;
+	font-weight: 400;
 	color: $grey;
 	strong {
-		font-weight: 600;
+		font-weight: 500;
 	}
 }
 
-%sans-serif-font {
+%header-font {
 	font-family: $sans-serif;
 	font-weight: 800;
 	color: $black;
@@ -109,7 +125,7 @@ $sans-serif: "Montserrat Alternates", sans-serif;
 p,
 ul,
 ol {
-	@extend %serif-font;
+	@extend %base-font;
 	font-size: var(--step-0);
 	line-height: 1.5em;
 	margin: 0 0 1em;
@@ -120,21 +136,21 @@ ul {
 }
 
 .font-step-1 {
-	@extend %serif-font;
+	@extend %base-font;
 	font-size: var(--step-1);
 	line-height: 1.25em;
 	margin: 0 0 2rem;
 }
 
 .font-step-2 {
-	@extend %serif-font;
+	@extend %base-font;
 	font-size: var(--step-2);
 	line-height: 0.8em;
 	margin: 0;
 }
 
 .font-step-3 {
-	@extend %serif-font;
+	@extend %base-font;
 	font-size: var(--step-3);
 	line-height: 1em;
 	margin: 0;
@@ -142,7 +158,7 @@ ul {
 }
 
 .font-step-4 {
-	@extend %sans-serif-font;
+	@extend %header-font;
 	font-size: var(--step-4);
 	line-height: 1em;
 	margin: 0;
@@ -150,7 +166,7 @@ ul {
 }
 
 .font-step-5 {
-	@extend %sans-serif-font;
+	@extend %header-font;
 	font-size: var(--step-5);
 	line-height: 1em;
 	margin: 0;
@@ -158,7 +174,7 @@ ul {
 }
 
 .font-step-6 {
-	@extend %sans-serif-font;
+	@extend %header-font;
 	font-size: var(--step-6);
 	line-height: 1em;
 	margin: 0;
@@ -166,7 +182,7 @@ ul {
 }
 
 .font-step-8 {
-	@extend %sans-serif-font;
+	@extend %header-font;
 	font-size: var(--step-8);
 	line-height: 1em;
 	margin: 0;
@@ -174,8 +190,12 @@ ul {
 }
 
 h1 {
-	@extend .font-step-4;
+	@extend .font-step-5;
 	margin-bottom: 1rem;
+}
+
+h2 {
+	@extend .font-step-4;
 }
 
 // Animations
@@ -206,7 +226,7 @@ a {
 input {
 	display: inline-block;
 	border: 2px solid $black;
-	@extend %serif-font;
+	@extend %base-font;
 	font-size: var(--step-0);
 	color: $black;
 	text-align: center;
@@ -219,7 +239,7 @@ input {
 
 button {
 	display: inline-block;
-	@extend %sans-serif-font;
+	@extend %header-font;
 	font-size: var(--step-0);
 	font-weight: 700;
 	color: $white;
@@ -246,7 +266,7 @@ button {
 a.button {
 	display: inline-block;
 	@extend .font-step-2;
-	@extend %sans-serif-font;
+	@extend %header-font;
 	font-weight: 700;
 	color: $white;
 	text-align: center;
@@ -293,57 +313,13 @@ a.button {
 	}
 }
 
-nav.menu {
-	@extend .font-step-0;
-	font-family: $sans-serif;
-	list-style: none;
-	margin: -2rem 0 2rem;
-	padding: 0;
-	text-align: center;
-	background: $black;
-	display: none;
-	width: 100%;
-	li {
-		padding: 1rem 0;
-	}
-	a {
-		color: $white;
-		font-weight: 500;
-		&:hover,
-		&:focus {
-			color: $green;
-			border-bottom: 2px solid $purple;
-		}
-		&:active,
-		&.active {
-			color: $green;
-		}
-		&.active {
-			cursor: default;
-		}
-	}
-}
-.menu-toggle {
-	background: none;
-	color: $grey;
-	font-weight: 500;
-	text-align: center;
-	padding: 1rem 0;
-	a {
-		i.closed {
-			display: none;
-		}
-		&:hover,
-		&:focus,
-		&:active {
-			border-bottom: none;
-		}
-	}
+.row {
+	max-width: 60rem;
+	margin: 0 auto;
+	padding: 4em 0;
+	z-index: 1;
 }
 
-.row {
-	margin: 4em auto;
-}
 img {
 	max-width: 100%;
 }
@@ -385,48 +361,9 @@ img {
 	}
 }
 
-.threeD-img {
-	z-index: 1;
-	position: relative;
-	picture.img-grey {
-		filter: grayscale(1);
-		@extend %animation;
-	}
-	picture.img-green,
-	picture.img-purple {
-		position: absolute;
-		z-index: -1;
-		left: 0;
-		top: 0;
-		padding: inherit;
-		@extend %animation;
-	}
-	picture.img-green {
-		transform: translate(-1rem, -1rem);
-	}
-
-	picture.img-purple {
-		transform: translate(1rem, 1rem);
-	}
-	&:hover,
-	&:focus,
-	&:active {
-		picture.img-grey {
-			filter: grayscale(0);
-		}
-		picture.img-green {
-			transform: translate(0, 0);
-		}
-
-		picture.img-purple {
-			transform: translate(0, 0);
-		}
-	}
-}
-
-%threeD-box {
+.threeD-box {
 	background: $white;
-	padding: 2rem 2rem 1.5rem;
+	padding: 1rem;
 	border: 2px solid $grey;
 	position: relative;
 	&::before,
@@ -450,9 +387,16 @@ img {
 	}
 }
 
-@media only screen and (min-width: 62em) {
-	%threeD-box {
-		padding: 4rem 4rem 3rem;
+.inverse {
+	background: $black;
+	%base-font {
+		color: $grey-inverse;
+	}
+	%header-font {
+		color: $white;
+	}
+	a {
+		color: $green;
 	}
 }
 
@@ -460,7 +404,7 @@ img {
 
 html,
 body {
-	@extend %serif-font;
+	@extend %base-font;
 	font-size: 16px;
 	height: 100%;
 }
@@ -470,88 +414,27 @@ body {
 	flex-direction: column;
 }
 
-header {
-	max-width: 80em;
-	margin: 2em auto;
-	position: relative;
-	flex-shrink: 0;
-	// &#masthead {
-	// 	max-width: 100%;
-	// 	text-align: center;
-	// 	margin-top: 0;
-	// 	h1 {
-	// 		@extend .font-step-8;
-	// 		display: inline-block;
-	// 		position: relative;
-	// 		margin-top: 2rem;
-	// 	}
-	// 	h3 {
-	// 		@extend .font-step-3;
-	// 		margin: 1.5rem 0 0 0;
-	// 	}
-	// }
-	&#inside {
-		width: 100%;
-		margin: 2rem auto 0;
-		h1 {
-			@extend .font-step-6;
-			display: inline-block;
-		}
-	}
-}
-
 main {
 	flex: 1 0 auto;
-}
-
-#portfolio,
-#mini-portfolio {
-	max-width: 80em;
-	margin: 2em auto 2rem;
-}
-
-.case-study {
-	margin-bottom: 8rem;
-	a {
-		h3 {
-			@extend .font-step-4;
-			font-size: var(--step-3);
-		}
-		p.font-step-2 {
-			margin: 0.5rem 0 1rem;
-			font-style: italic;
-		}
-		p.read-more {
-			font-weight: 600;
-		}
-		&[role="section"] {
-			position: relative;
-			z-index: 5;
-		}
-		&:hover,
-		&:focus,
-		&:active {
-			border-bottom: none;
-			p.read-more {
-				color: $purple;
-			}
-		}
-	}
+	margin: 0;
 }
 
 .social-icons {
 	@extend .font-step-2;
-	text-align: center;
+	text-align: right;
 	margin: 0;
 	a {
 		display: inline-block;
-		padding: 0 1rem;
 		color: $green;
+		margin: 0 1rem;
 		&:hover,
 		&:focus,
 		&:active {
 			border-bottom: none;
 			color: $white;
+		}
+		&:last-of-type {
+			margin-right: 0;
 		}
 	}
 }
@@ -581,62 +464,12 @@ footer#contact {
 	margin: 2rem 0 0;
 	position: relative;
 	z-index: 1;
-	.row {
-		margin: 0 auto;
-		max-width: 80em;
-	}
 }
 
 #about {
-	.row {
-		max-width: 80em;
-	}
-	aside {
-		@extend %threeD-box;
-		padding: 1rem;
-		margin-bottom: 3rem;
-	}
-}
-
-#case-study {
-	margin: 2rem auto 1rem;
-	.row {
-		max-width: 80em;
-		margin: 0 auto 2rem;
-	}
-	#details,
-	#conclusions .text-wrap {
-		@extend %threeD-box;
-	}
-	#details {
-		margin-top: 2rem;
-	}
-	h3 {
-		@extend .font-step-1;
-		font-family: $sans-serif;
-		font-weight: 700;
-		color: $black;
-		text-transform: lowercase;
+	h2 {
+		@extend .font-step-3;
 		margin-bottom: 1rem;
-	}
-	h4 {
-		@extend .font-step-1;
-		font-weight: 600;
-		margin-bottom: 1rem;
-	}
-	#mini-portfolio {
-		h3 {
-			@extend .font-step-4;
-			font-size: var(--step-3);
-		}
-	}
-}
-
-#case-study-bottom {
-	max-width: 80em;
-	margin: 0 auto;
-	.row {
-		margin: 0 auto 2rem;
 	}
 }
 
@@ -675,20 +508,7 @@ footer {
 	.menu-toggle {
 		display: none;
 	}
-	header#masthead {
-		max-width: 100%;
-		text-align: center;
-		margin: 2rem auto;
-		h3 {
-			margin-left: 3rem;
-		}
-	}
-	header#inside {
-		margin: 2rem auto;
-		h1 {
-			margin-top: 2rem;
-		}
-	}
+
 	a.button,
 	button {
 		padding: 2rem 4rem;
@@ -699,35 +519,5 @@ footer {
 	button {
 		padding: 1rem 2rem;
 		margin: 0 auto;
-	}
-
-	.row {
-		margin: 6em auto;
-	}
-
-	.case-study {
-		h3 {
-			font-size: var(--step-4);
-		}
-	}
-
-	#case-study {
-		margin: 2rem auto 2rem;
-		.row {
-			margin: 0 auto 4rem;
-		}
-		#details {
-			margin-top: 0;
-		}
-	}
-	footer#contact {
-		margin: 2rem 0 0;
-		padding: 5rem 0;
-	}
-
-	#about {
-		aside {
-			margin-bottom: 0;
-		}
 	}
 }

@@ -2,4 +2,4 @@
 
 # Allow crawling of all content
 User-agent: *
-Disallow: /c01f958fba449fbcb1aec1d45a9a1b82e326934a/
+Disallow: 
