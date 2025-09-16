@@ -5,6 +5,11 @@ $grey-inverse: #e6e6e6;
 $green: #01f9c6;
 $purple: #5d21d0;
 
+$sig-blue: #0059eb;
+$sig-green: #4cec8c;
+$sig-yellow: #4cec8c;
+$sig-pink: #ffcee6;
+
 :root {
 	--fluid-min-width: 450;
 	--fluid-max-width: 1440;
@@ -337,32 +342,33 @@ img {
 	text-align: center;
 }
 
-.threeD-type {
-	position: relative;
-	&:before,
-	&:after {
-		content: attr(title);
-		position: absolute;
-		color: $white;
-		-webkit-text-fill-color: $white; /* Will override color (regardless of order) */
-		-webkit-text-stroke-width: 0.02em;
-		z-index: -1;
-		white-space: nowrap;
-	}
-	&:before {
-		left: -0.075em;
-		top: -0.075em;
-		-webkit-text-stroke-color: $green;
-	}
-	&:after {
-		right: -0.075em;
-		bottom: -0.075em;
-		-webkit-text-stroke-color: $purple;
-	}
-}
+// .threeD-type {
+// 	position: relative;
+// 	&:before,
+// 	&:after {
+// 		content: attr(title);
+// 		position: absolute;
+// 		color: $white;
+// 		-webkit-text-fill-color: $white; /* Will override color (regardless of order) */
+// 		-webkit-text-stroke-width: 0.02em;
+// 		z-index: -1;
+// 		white-space: nowrap;
+// 	}
+// 	&:before {
+// 		left: -0.075em;
+// 		top: -0.075em;
+// 		-webkit-text-stroke-color: $green;
+// 	}
+// 	&:after {
+// 		right: -0.075em;
+// 		bottom: -0.075em;
+// 		-webkit-text-stroke-color: $purple;
+// 	}
+// }
 
 .threeD-box {
 	background: $white;
+	margin: 1rem 0;
 	padding: 1rem;
 	border: 2px solid $grey;
 	position: relative;
@@ -387,8 +393,16 @@ img {
 	}
 }
 
+picture {
+	&.threeD-box {
+	}
+}
+
 .inverse {
+	width: 100vw;
 	background: $black;
+	position: relative;
+	z-index: -10;
 	%base-font {
 		color: $grey-inverse;
 	}
@@ -397,6 +411,11 @@ img {
 	}
 	a {
 		color: $green;
+	}
+	h1,
+	h2,
+	h3 {
+		color: $white;
 	}
 }
 
@@ -466,6 +485,11 @@ footer#contact {
 	z-index: 1;
 }
 
+header.row,
+footer {
+	flex-shrink: 0;
+}
+
 #about {
 	h2 {
 		@extend .font-step-3;
@@ -473,9 +497,38 @@ footer#contact {
 	}
 }
 
-header.row,
-footer {
-	flex-shrink: 0;
+#phi {
+	.threeD-box {
+		&::before {
+			border-color: $sig-green;
+		}
+		&::after {
+			border-color: $sig-blue;
+		}
+	}
+}
+
+#uploybot {
+	.threeD-box {
+		&::before {
+			border-color: $sig-pink;
+		}
+		&::after {
+			border-color: $sig-green;
+		}
+	}
+}
+
+#perspective {
+	background-color: $sig-blue;
+	.threeD-box {
+		&::before {
+			border-color: $black;
+		}
+		&::after {
+			border-color: $white;
+		}
+	}
 }
 
 @media only screen and (min-width: 62em) {
