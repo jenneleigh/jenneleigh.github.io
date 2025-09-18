@@ -291,8 +291,8 @@ img {
 .threeD-box {
   background: #fff;
   margin: 1rem 0;
-  padding: 1rem;
-  border: 2px solid #4d4d4d;
+  padding: 0.5rem;
+  border: 2px solid #000;
   position: relative;
 }
 .threeD-box::before, .threeD-box::after {
@@ -304,14 +304,53 @@ img {
   z-index: -1;
 }
 .threeD-box::before {
-  left: -1rem;
-  top: -1rem;
+  left: -0.5rem;
+  top: -0.5rem;
   border: 2px solid #01f9c6;
 }
 .threeD-box::after {
+  right: -0.5rem;
+  bottom: -0.5rem;
+  border: 2px solid #5d21d0;
+}
+.threeD-box#headshot {
+  padding: 1rem;
+}
+.threeD-box#headshot::before {
+  left: -1rem;
+  top: -1rem;
+}
+.threeD-box#headshot::after {
   right: -1rem;
   bottom: -1rem;
-  border: 2px solid #5d21d0;
+}
+
+.divider {
+  display: block;
+  width: 100%;
+  max-width: 80rem;
+  height: 2px;
+  margin: 0 auto;
+  background: #000;
+  position: relative;
+}
+.divider::before, .divider::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.divider::before {
+  left: -2.5rem;
+  top: -0.5rem;
+  background: #01f9c6;
+}
+.divider::after {
+  right: -2.5rem;
+  bottom: -0.5rem;
+  background: #5d21d0;
 }
 
 .inverse {
@@ -337,6 +376,10 @@ img {
 .inverse h2,
 .inverse h3 {
   color: #fff;
+}
+.inverse .threeD-box {
+  border: 2px solid #fff;
+  background: #000;
 }
 
 html,
@@ -422,10 +465,20 @@ footer {
 #perspective {
   background-color: #0059eb;
 }
+#perspective .threeD-box {
+  background: #0059eb;
+}
 #perspective .threeD-box::before {
-  border-color: #000;
+  border-color: #f0ff45;
 }
 #perspective .threeD-box::after {
+  border-color: #000;
+}
+
+#color-gen .threeD-box::before {
+  border-color: #000;
+}
+#color-gen .threeD-box::after {
   border-color: #fff;
 }
 

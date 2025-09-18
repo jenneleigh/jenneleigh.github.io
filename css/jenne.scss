@@ -7,8 +7,11 @@ $purple: #5d21d0;
 
 $sig-blue: #0059eb;
 $sig-green: #4cec8c;
-$sig-yellow: #4cec8c;
+$sig-yellow: #f0ff45;
 $sig-pink: #ffcee6;
+
+$skittle-pink: #d64287;
+$skittle-purple: #7724e2;
 
 :root {
 	--fluid-min-width: 450;
@@ -369,8 +372,8 @@ img {
 .threeD-box {
 	background: $white;
 	margin: 1rem 0;
-	padding: 1rem;
-	border: 2px solid $grey;
+	padding: 0.5rem;
+	border: 2px solid $black;
 	position: relative;
 	&::before,
 	&::after {
@@ -382,19 +385,54 @@ img {
 		z-index: -1;
 	}
 	&::before {
-		left: -1rem;
-		top: -1rem;
+		left: -0.5rem;
+		top: -0.5rem;
 		border: 2px solid $green;
 	}
 	&::after {
-		right: -1rem;
-		bottom: -1rem;
+		right: -0.5rem;
+		bottom: -0.5rem;
 		border: 2px solid $purple;
+	}
+	&#headshot {
+		padding: 1rem;
+		&::before {
+			left: -1rem;
+			top: -1rem;
+		}
+		&::after {
+			right: -1rem;
+			bottom: -1rem;
+		}
 	}
 }
 
-picture {
-	&.threeD-box {
+.divider {
+	display: block;
+	width: 100%;
+	max-width: 80rem;
+	height: 2px;
+	margin: 0 auto;
+	background: $black;
+	position: relative;
+	&::before,
+	&::after {
+		display: block;
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+	}
+	&::before {
+		left: -2.5rem;
+		top: -0.5rem;
+		background: $green;
+	}
+	&::after {
+		right: -2.5rem;
+		bottom: -0.5rem;
+		background: $purple;
 	}
 }
 
@@ -416,6 +454,10 @@ picture {
 	h2,
 	h3 {
 		color: $white;
+	}
+	.threeD-box {
+		border: 2px solid $white;
+		background: $black;
 	}
 }
 
@@ -521,6 +563,18 @@ footer {
 
 #perspective {
 	background-color: $sig-blue;
+	.threeD-box {
+		background: $sig-blue;
+		&::before {
+			border-color: $sig-yellow;
+		}
+		&::after {
+			border-color: $black;
+		}
+	}
+}
+
+#color-gen {
 	.threeD-box {
 		&::before {
 			border-color: $black;
