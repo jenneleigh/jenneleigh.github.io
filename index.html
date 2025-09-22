@@ -2,29 +2,20 @@
 <html class="no-js" lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>Jenné Leigh | creative-type person</title>
+		<title>Jenné Leigh | Friendly neighborhood design systems specialist</title>
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-		<link rel="manifest" href="/site.webmanifest" />
-		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0a3d62" />
-		<meta name="msapplication-TileColor" content="#2b5797" />
-		<meta name="theme-color" content="#ffffff" />
 
 		<link rel="stylesheet" href="css/flexboxgrid.min.css" type="text/css" />
 		<link rel="stylesheet" href="css/normalize.css" />
 		<link rel="stylesheet" href="css/main.css" />
 		<link rel="stylesheet" href="css/jenne.css" />
 
+		<script src="js/modernizr.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
-		<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,600;1,300;1,600&family=Montserrat+Alternates:ital,wght@0,500;0,700;0,800;1,500;1,700;1,800&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,500;0,700;0,800;1,500;1,700;1,800&display=swap" rel="stylesheet" />
 
 		<script src="https://kit.fontawesome.com/5d334cb730.js" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-		<meta name="theme-color" content="#fafafa" />
 	</head>
 
 	<body>
@@ -32,70 +23,150 @@
 			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 		<![endif]-->
 		<!-- Add your site or application content here -->
-		<header id="inside" class="row middle-xs">
-			<nav class="col-sm-3 menu" id="top-menu">
-				<li><a href="#" class="active">about</a></li>
-				<li><a href="portfolio.html">work</a></li>
-				<li><a href="#contact">contact</a></li>
-			</nav>
-			<section class="col-xs-10 col-sm-9">
-				<h1 class="threeD-type" title="Jenné Leigh">Jenné Leigh</h1>
-			</section>
-			<div class="col-xs-2 menu-toggle">
-				<a href="#"><i class="fas fa-bars open"></i><i class="far fa-times-circle closed"></i></a>
-			</div>
-		</header>
+		<header class="inverse">
+			<section class="row middle-sm" id="about">
+				<picture class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0 threeD-box" id="headshot">
+					<source srcset="img/jenne-headshot.jpg 1x, img/jenne-headshot@2x.jpg 2x" />
+					<img src="img/jenne-headshot.jpg" alt="Jenné's headshot" class="img-fluid" />
+				</picture>
 
-		<main id="about">
-			<div class="row middle-sm">
-				<aside class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0" id="headshot">
-					<picture>
-						<source srcset="/img/jenne-headshot.jpg 1x, /img/jenne-headshot@2x.jpg 2x" />
-						<img src="/img/jenne-headshot.jpg" alt="Jenné's headshot" class="img-fluid" />
-					</picture>
-				</aside>
-				<section class="col-xs-10 col-xs-offset-1 col-sm-5">
+				<article class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1">
 					<h1>Hi! I'm Jenné</h1>
-					<h2>i'm a former design generalist turned design system specialist</h2>
-					<p>Seriously, I've done it all: Print, web, code, you name it. Though these days most of my time is spent writing documentation and creating Figma components.</p>
-					<p>My portfolio is a WIP right now, but you can <a href="portfolio.html">find it here</a>&hellip;if you have the password.</p>
-					<p>If you don't have the password, <a href="mailto:jenne@jenneleigh.com?subject=Hello" title="let's chat!">let's chat</a> instead.</p>
+					<h2>and I think design systems are pretty neat!</h2>
+					<p>
+						While I have a background as a design generalist (print, web, social, code, you name it), these days I'm all about design systems. I love building beautiful Figma components, obsessing over the minutest of usage edge
+						cases, writing helpful documentation and making sure everything I build is accessible.
+					</p>
+					<p>When I'm not heads down in Figma, you can find me chillaxing in my favorite SF coffee shops, making ceramics at my neighborhood studio or taking too many pictures of my cat.</p>
+					<p>Keep scrolling for some selected highlights of my work. Wanna know even more about me and my work? <a href="mailto:jenne@jenneleigh.com?subject=Hello" title="Get in touch">Get in touch!</a></p>
+				</article>
+			</section>
+		</header>
+		<main>
+			<section class="row middle-sm between-xs" id="phi">
+				<article class="col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0">
+					<h2>Phi</h2>
+					<h3>Sigma's design system</h3>
+					<p>The majority of my time at Sigma was spent designing, maintaining and educating about our design system, which we dubbed Phi.</p>
+					<p>
+						Phi has all of the standard design system qualities: cohesion, flexibility, scalability, accessibility, etc. Uniquely, Phi was built to be fully user-themeable, as many of Sigma's customers embedded our product
+						within their own product environments.
+					</p>
+					<p><a href="https://www.figma.com/design/DGhnFbdDqLISGj7RZUZts3/Phi?node-id=1441-1120&p=f&t=rehwmtXrMxCXKmQ9-11" target="_blank">Check out a copy of the Phi Figma library here to see what I mean &Rarr;</a></p>
+				</article>
+
+				<picture class="col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0 threeD-box">
+					<source srcset="img/phi.png 1x, img/phi@2x.png 2x" />
+					<img src="img/phi.png" alt="A few example components from the Phi system displayed at an angle over a blue-green gradient background" class="img-fluid" />
+				</picture>
+			</section>
+
+			<div class="inverse" id="uploybot">
+				<section class="row middle-sm">
+					<article class="col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0">
+						<h2>UployBot</h2>
+						<h3>Giving our internal tools a much needed facelift</h3>
+						<p>Poor little Uploybot. Originally just a tool to help release code to production, over the years it slowly gained more and more features, without ever getting even a once-over from a designer.</p>
+						<p>
+							My engineering team finally got fed up with the state of Uploybot and tapped me to help design a top-to-bottom rebuild of the tool using Phi. To say the redesign was a success would be an understatement.
+							Engineers company-wide loved the visual upgrade and the streamlined flows. The update also served as a good test example of how easy it was to migrate code to Phi.
+						</p>
+					</article>
+					<div class="col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0 threeD-box" id="before-after">
+						<figure class="cd-image-container">
+							<img src="img/uploybot-before@2x.png" alt="A screenshot of the Job run information screen before I redesigned it" />
+							<span class="cd-image-label" data-type="original">Before</span>
+
+							<div class="cd-resize-img">
+								<!-- the resizable image on top -->
+								<img src="img/uploybot-after@2x.png" alt="A screenshot of the Job run information screen after I redesigned it" />
+								<span class="cd-image-label" data-type="modified">After</span>
+							</div>
+
+							<span class="cd-handle"></span>
+						</figure>
+						<!-- cd-image-container -->
+					</div>
 				</section>
 			</div>
+
+			<div class="inverse" id="perspective">
+				<section class="row middle-sm">
+					<article class="col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0">
+						<h2>Project: Perspective</h2>
+						<h3>What if&hellip;we could make Workbook theming painless?</h3>
+						<p>
+							When our new VP of Design started, he kicked off a skunkworks project to redesign the look and feel of our Workbooks UI, codenamed Horizon. He then tasked me, as the resident color expert, to take on imaging a
+							new interface for Workbooks theming, codenamed Perspective (get it?).
+						</p>
+						<p>
+							The goal of the project was to streamline the theming process and lessen the analysis paralysis our less design-savvy users felt when presented with our broad suite of theming options. You can play with the
+							prototype I built below and see if you agree.
+						</p>
+					</article>
+					<div class="col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0 threeD-box" id="prototype">
+						<iframe
+							style="border: 0 none"
+							width="100%"
+							height="700"
+							src="https://embed.figma.com/proto/952gguW7sseZUOdz56iq90/Perspective---Prototype?page-id=0%3A1&node-id=8-6332&viewport=1244%2C288%2C0.11&scaling=fit-width&content-scaling=fixed&starting-point-node-id=8%3A6332&embed-host=share"
+							allowfullscreen
+						></iframe>
+					</div>
+				</section>
+			</div>
+
+			<div id="juice">
+				<section class="row middle-sm">
+					<article class="col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0">
+						<h2>Juice</h2>
+						<h3>No, not that kind of juice</h3>
+						<p>For Sigma's 2024 Summer Hackathon, I did a silly little lightning talk presentation about "juice", the art of bringing a little extra oomph to your interactive designs.</p>
+						<p class="small">(This was also right after Sigma launched their most recent rebrand, so I took the opportunity to really show off how fun the new brand was to all our engineers.)</p>
+					</article>
+					<div class="col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0 threeD-box">
+						<iframe style="border: 0 none" width="100%" height="500" src="https://embed.figma.com/slides/jJeWxGAWKf9Z1wesmVb2pw/JUICE----Lightning-Talk?node-id=1-36&embed-host=share" allowfullscreen></iframe>
+					</div>
+				</section>
+			</div>
+
+			<section id="template">
+				<article class="row middle-sm">
+					<div class="col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0">
+						<h2>Figma Template</h2>
+						<h3>Design ops, my beloved</h3>
+						<p>
+							The design team's file hygiene was notoriously poor and it made it difficult to onboard new designers and ensure engineers wrote clean code. To help us start new projects off on the right foot, I set up a new
+							Figma template with sample layouts and a commonly used components sticker sheet.
+						</p>
+						<p><a href="https://www.figma.com/design/INsscm00jsEMSQZl13y5Ap/Project-Template?node-id=0-1&p=f&t=yb6QVJmecYgGyAZI-11" target="_blank">You can take a peep at the template here &Rarr;</a></p>
+					</div>
+					<picture class="col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0 threeD-box">
+						<source srcset="img/template.png 1x, img/template@2x.png 2x" />
+						<img src="img/template.png" alt="A grid of Figma thumbnails that were created using the resources in the project template" class="img-fluid" />
+					</picture>
+				</article>
+			</section>
 		</main>
 
-		<footer id="contact">
+		<footer class="inverse" id="contact">
 			<div class="row middle-sm">
-				<aside class="col-xs-12 col-sm-3 jump-links"></aside>
+				<div class="col-cs-12 col-sm-3">
+					<h3>Thanks for checking out my work!</h3>
+				</div>
 				<div class="col-xs-12 col-sm-6 text-center">
 					<a href="mailto:jenne@jenneleigh.com?subject=Hello" class="button" title="let's chat!">let's chat!</a>
 				</div>
 
-				<aside class="col-xs-12 col-sm-3 social-icons">
+				<div class="col-xs-12 col-sm-3 social-icons">
 					<a href="https://www.instagram.com/jenneleigh/" title="Instagram"><i class="fab fa-instagram"></i></a>
-					<a href="https://dribbble.com/jenne" title="Dribbble"><i class="fab fa-dribbble"></i></a>
 					<a href="https://www.linkedin.com/in/jenneleigh/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-				</aside>
+					<a href="mailto:jenne@jenneleigh.com?subject=Hello" title="Email me"><i class="fa fa-envelope"></i></a>
+				</div>
 			</div>
 		</footer>
-
-		<script src="js/vendor/modernizr-3.8.0.min.js"></script>
-		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-		<script>
-			window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>');
-		</script>
-		<script src="js/plugins.js"></script>
-
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-RSJRT15QPK"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag() {
-				dataLayer.push(arguments);
-			}
-			gtag("js", new Date());
-
-			gtag("config", "G-RSJRT15QPK");
-		</script>
+		<script src="js/jquery-2.1.1.js"></script>
+		<script src="js/jquery.mobile.custom.min.js"></script>
+		<script src="js/main.js"></script>
 	</body>
 </html>

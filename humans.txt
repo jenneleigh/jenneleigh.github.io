@@ -3,11 +3,13 @@
 
 # TEAM
 
-    Jenné Leigh -- Designer & Developer
+    Jenné Leigh - Designer & Developer (that's me!)
 
-# THANKS
+# CREDITS
 
-    Vivek Tanna, Sally Peang and the rest of the United Designers crew 
+    Before/after slider via CodyHouse - https://codyhouse.co/gem/css-jquery-image-comparison-slider
+    Icons via FontAwesome - https://fontawesome.com/
+    Satoshi font via Fontshare - https://www.fontshare.com/fonts/satoshi
 
 # TECHNOLOGY COLOPHON
 
