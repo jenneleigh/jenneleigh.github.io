@@ -5,6 +5,9 @@ $grey-inverse: #e6e6e6;
 $green: #01f9c6;
 $purple: #5d21d0;
 
+$purple-hover: #3b1584;
+$green-hover: #b1ffef;
+
 $sig-blue: #0059eb;
 $sig-green: #4cec8c;
 $sig-yellow: #f0ff45;
@@ -222,12 +225,12 @@ a {
 	font-weight: 600;
 	&:hover,
 	&:focus {
-		color: $grey;
-		border-bottom: 2px solid $grey;
+		color: $purple-hover;
+		border-bottom: 2px solid $purple-hover;
 	}
 	&:active,
 	&.active {
-		color: $purple;
+		color: $purple-hover;
 	}
 }
 
@@ -308,7 +311,7 @@ a.button {
 	&:hover,
 	&:focus,
 	&:active {
-		color: $purple;
+		color: $purple !important;
 		background: $white;
 		border-color: $black;
 		&::before,
@@ -317,7 +320,7 @@ a.button {
 		}
 	}
 	&:active {
-		color: $purple;
+		color: $purple !important;
 	}
 }
 
@@ -325,7 +328,8 @@ a.button {
 	max-width: 60rem;
 	margin: 0 auto;
 	padding: 4em 0;
-	z-index: 1;
+	position: relative;
+	z-index: 2;
 }
 
 img {
@@ -372,7 +376,7 @@ img {
 .threeD-box {
 	background: $white;
 	margin: 1rem 0;
-	padding: 0.5rem;
+	padding: 0.75rem;
 	border: 2px solid $black;
 	position: relative;
 	&::before,
@@ -385,17 +389,17 @@ img {
 		z-index: -1;
 	}
 	&::before {
-		left: -0.5rem;
-		top: -0.5rem;
+		left: -0.75rem;
+		top: -0.75rem;
 		border: 2px solid $green;
 	}
 	&::after {
-		right: -0.5rem;
-		bottom: -0.5rem;
+		right: -0.75rem;
+		bottom: -0.75rem;
 		border: 2px solid $purple;
 	}
 	&#headshot {
-		padding: 1rem;
+		padding: 1.25rem;
 		&::before {
 			left: -1rem;
 			top: -1rem;
@@ -440,7 +444,7 @@ img {
 	width: 100vw;
 	background: $black;
 	position: relative;
-	z-index: -10;
+	z-index: 1;
 	%base-font {
 		color: $grey-inverse;
 	}
@@ -449,6 +453,15 @@ img {
 	}
 	a {
 		color: $green;
+		&:hover,
+		&:focus {
+			color: $green-hover;
+			border-bottom: 2px solid $green-hover;
+		}
+		&:active,
+		&.active {
+			color: $green-hover;
+		}
 	}
 	h1,
 	h2,
@@ -525,6 +538,10 @@ footer#contact {
 	margin: 2rem 0 0;
 	position: relative;
 	z-index: 1;
+	h3 {
+		@extend %header-font;
+		color: $white;
+	}
 }
 
 header.row,
@@ -552,6 +569,7 @@ footer {
 
 #uploybot {
 	.threeD-box {
+		margin-bottom: 2rem;
 		&::before {
 			border-color: $sig-pink;
 		}
@@ -565,8 +583,11 @@ footer {
 	background-color: $sig-blue;
 	.threeD-box {
 		background: $sig-blue;
+		border-color: $sig-yellow;
+		padding: 0;
+
 		&::before {
-			border-color: $sig-yellow;
+			border-color: $white;
 		}
 		&::after {
 			border-color: $black;
@@ -574,13 +595,17 @@ footer {
 	}
 }
 
-#color-gen {
+#juice {
+	background-color: $sig-green;
 	.threeD-box {
+		background-color: $sig-green;
+		padding: 0;
+
 		&::before {
-			border-color: $black;
+			border-color: $white;
 		}
 		&::after {
-			border-color: $white;
+			border-color: $grey;
 		}
 	}
 }
@@ -627,4 +652,151 @@ footer {
 		padding: 1rem 2rem;
 		margin: 0 auto;
 	}
+}
+
+//  Before after slider
+
+.cd-image-container {
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+}
+.cd-image-container img {
+	display: block;
+}
+
+.cd-image-label {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	@extend .font-step-2;
+	color: $sig-blue !important;
+	padding: 1em;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	opacity: 0;
+	-webkit-transform: translateY(20px);
+	-moz-transform: translateY(20px);
+	-ms-transform: translateY(20px);
+	-o-transform: translateY(20px);
+	transform: translateY(20px);
+	-webkit-transition: -webkit-transform 0.3s 0.7s, opacity 0.3s 0.7s;
+	-moz-transition: -moz-transform 0.3s 0.7s, opacity 0.3s 0.7s;
+	transition: transform 0.3s 0.7s, opacity 0.3s 0.7s;
+}
+.cd-image-label.is-hidden {
+	visibility: hidden;
+}
+.is-visible .cd-image-label {
+	opacity: 1;
+	-webkit-transform: translateY(0);
+	-moz-transform: translateY(0);
+	-ms-transform: translateY(0);
+	-o-transform: translateY(0);
+	transform: translateY(0);
+}
+
+.cd-resize-img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
+	overflow: hidden;
+	/* Force Hardware Acceleration in WebKit */
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+.cd-resize-img img {
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: block;
+	height: 100%;
+	width: auto;
+	max-width: none;
+}
+.cd-resize-img .cd-image-label {
+	right: auto;
+	left: 0;
+}
+.is-visible .cd-resize-img {
+	width: 50%;
+	/* bounce in animation of the modified image */
+	-webkit-animation: cd-bounce-in 0.7s;
+	-moz-animation: cd-bounce-in 0.7s;
+	animation: cd-bounce-in 0.7s;
+}
+
+@-webkit-keyframes cd-bounce-in {
+	0% {
+		width: 0;
+	}
+	60% {
+		width: 55%;
+	}
+	100% {
+		width: 50%;
+	}
+}
+@-moz-keyframes cd-bounce-in {
+	0% {
+		width: 0;
+	}
+	60% {
+		width: 55%;
+	}
+	100% {
+		width: 50%;
+	}
+}
+@keyframes cd-bounce-in {
+	0% {
+		width: 0;
+	}
+	60% {
+		width: 55%;
+	}
+	100% {
+		width: 50%;
+	}
+}
+.cd-handle {
+	position: absolute;
+	height: 32px;
+	width: 32px;
+	/* center the element */
+	left: 50%;
+	top: 50%;
+	margin-left: -16px;
+	margin-top: -16px;
+	border-radius: 50%;
+	background: $sig-blue url("../img/cd-arrows.svg") no-repeat center center;
+	cursor: move;
+	opacity: 0;
+	-webkit-transform: translate3d(0, 0, 0) scale(0);
+	-moz-transform: translate3d(0, 0, 0) scale(0);
+	-ms-transform: translate3d(0, 0, 0) scale(0);
+	-o-transform: translate3d(0, 0, 0) scale(0);
+	transform: translate3d(0, 0, 0) scale(0);
+}
+.cd-handle.draggable {
+	/* change background color when element is active */
+	background-color: $black;
+}
+.is-visible .cd-handle {
+	opacity: 1;
+	-webkit-transform: translate3d(0, 0, 0) scale(1);
+	-moz-transform: translate3d(0, 0, 0) scale(1);
+	-ms-transform: translate3d(0, 0, 0) scale(1);
+	-o-transform: translate3d(0, 0, 0) scale(1);
+	transform: translate3d(0, 0, 0) scale(1);
+	-webkit-transition: -webkit-transform 0.3s 0.7s, opacity 0s 0.7s;
+	-moz-transition: -moz-transform 0.3s 0.7s, opacity 0s 0.7s;
+	transition: transform 0.3s 0.7s, opacity 0s 0.7s;
 }
