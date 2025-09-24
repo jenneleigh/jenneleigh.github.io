@@ -284,7 +284,7 @@ a.button {
 	background-color: $black;
 	border: 2px solid $white;
 	padding: 1.5rem 3rem;
-	margin: 2rem 0;
+	margin: 1.5rem auto 3rem;
 	position: relative;
 	@extend %animation;
 	&::before,
@@ -349,33 +349,9 @@ img {
 	text-align: center;
 }
 
-// .threeD-type {
-// 	position: relative;
-// 	&:before,
-// 	&:after {
-// 		content: attr(title);
-// 		position: absolute;
-// 		color: $white;
-// 		-webkit-text-fill-color: $white; /* Will override color (regardless of order) */
-// 		-webkit-text-stroke-width: 0.02em;
-// 		z-index: -1;
-// 		white-space: nowrap;
-// 	}
-// 	&:before {
-// 		left: -0.075em;
-// 		top: -0.075em;
-// 		-webkit-text-stroke-color: $green;
-// 	}
-// 	&:after {
-// 		right: -0.075em;
-// 		bottom: -0.075em;
-// 		-webkit-text-stroke-color: $purple;
-// 	}
-// }
-
 .threeD-box {
 	background: $white;
-	margin: 1rem 0;
+	margin: 1rem auto;
 	padding: 0.75rem;
 	border: 2px solid $black;
 	position: relative;
@@ -400,6 +376,7 @@ img {
 	}
 	&#headshot {
 		padding: 1.25rem;
+		margin-bottom: 2rem;
 		&::before {
 			left: -1rem;
 			top: -1rem;
@@ -474,6 +451,12 @@ img {
 	}
 }
 
+iframe {
+	width: 100%; /* Ensure the iframe takes full width of its container */
+	height: auto; /* Allow height to adjust automatically */
+	aspect-ratio: 4 / 3; /* Or your desired aspect ratio, e.g., 4 / 3 */
+}
+
 //  Template
 
 html,
@@ -495,7 +478,6 @@ main {
 
 .social-icons {
 	@extend .font-step-2;
-	text-align: right;
 	margin: 0;
 	a {
 		display: inline-block;
@@ -538,6 +520,7 @@ footer#contact {
 	margin: 2rem 0 0;
 	position: relative;
 	z-index: 1;
+	text-align: center;
 	h3 {
 		@extend %header-font;
 		color: $white;
@@ -611,36 +594,6 @@ footer {
 }
 
 @media only screen and (min-width: 62em) {
-	nav.menu {
-		display: block;
-		width: auto;
-		background: none;
-		text-align: right;
-
-		margin: 0;
-
-		position: fixed;
-		top: 2rem;
-		right: 2rem;
-		a {
-			color: $grey;
-			&:hover,
-			&:focus {
-				color: $purple;
-			}
-			&:active,
-			&.active {
-				color: $purple;
-			}
-			&.active {
-				cursor: default;
-			}
-		}
-	}
-	.menu-toggle {
-		display: none;
-	}
-
 	a.button,
 	button {
 		padding: 2rem 4rem;
@@ -651,6 +604,15 @@ footer {
 	button {
 		padding: 1rem 2rem;
 		margin: 0 auto;
+	}
+	iframe {
+		aspect-ratio: 16 / 9; /* Or your desired aspect ratio, e.g., 4 / 3 */
+	}
+
+	#perspective {
+		iframe {
+			aspect-ratio: 4/3;
+		}
 	}
 }
 

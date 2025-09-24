@@ -230,7 +230,7 @@ a.button {
   background-color: #000;
   border: 2px solid #fff;
   padding: 1.5rem 3rem;
-  margin: 2rem 0;
+  margin: 1.5rem auto 3rem;
   position: relative;
 }
 a.button::before, a.button::after {
@@ -291,7 +291,7 @@ img {
 
 .threeD-box {
   background: #fff;
-  margin: 1rem 0;
+  margin: 1rem auto;
   padding: 0.75rem;
   border: 2px solid #000;
   position: relative;
@@ -316,6 +316,7 @@ img {
 }
 .threeD-box#headshot {
   padding: 1.25rem;
+  margin-bottom: 2rem;
 }
 .threeD-box#headshot::before {
   left: -1rem;
@@ -390,6 +391,12 @@ img {
   background: #000;
 }
 
+iframe {
+  width: 100%; /* Ensure the iframe takes full width of its container */
+  height: auto; /* Allow height to adjust automatically */
+  aspect-ratio: 4/3; /* Or your desired aspect ratio, e.g., 4 / 3 */
+}
+
 html,
 body {
   font-size: 16px;
@@ -407,7 +414,6 @@ main {
 }
 
 .social-icons {
-  text-align: right;
   margin: 0;
 }
 .social-icons a {
@@ -445,6 +451,7 @@ footer#contact {
   margin: 2rem 0 0;
   position: relative;
   z-index: 1;
+  text-align: center;
 }
 footer#contact h3 {
   color: #fff;
@@ -506,31 +513,6 @@ footer {
 }
 
 @media only screen and (min-width: 62em) {
-  nav.menu {
-    display: block;
-    width: auto;
-    background: none;
-    text-align: right;
-    margin: 0;
-    position: fixed;
-    top: 2rem;
-    right: 2rem;
-  }
-  nav.menu a {
-    color: #4d4d4d;
-  }
-  nav.menu a:hover, nav.menu a:focus {
-    color: #5d21d0;
-  }
-  nav.menu a:active, nav.menu a.active {
-    color: #5d21d0;
-  }
-  nav.menu a.active {
-    cursor: default;
-  }
-  .menu-toggle {
-    display: none;
-  }
   a.button,
   button {
     padding: 2rem 4rem;
@@ -540,6 +522,12 @@ footer {
   button {
     padding: 1rem 2rem;
     margin: 0 auto;
+  }
+  iframe {
+    aspect-ratio: 16/9; /* Or your desired aspect ratio, e.g., 4 / 3 */
+  }
+  #perspective iframe {
+    aspect-ratio: 4/3;
   }
 }
 .cd-image-container {
